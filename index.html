@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Excellence Edge — Excellence Function Knowledge Hub | Subramanian Shanmugam</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f5f7f5;
+  --surface: #ffffff;
+  --card: #ffffff;
+  --border: #dde8de;
+  --border-light: #eaf0eb;
+  --gold: #92400e;
+  --gold-dark: #78350f;
+  --gold-light: #fef3c7;
+  --gold-pale: #fffbeb;
+  --navy: #1a2e1a;
+  --navy-mid: #2d4a2d;
+  --text-primary: #111811;
+  --text-secondary: #2d4a2d;
+  --text-muted: #6b7f6b;
+  --cat1: #92400e;   /* Models - Amber */
+  --cat2: #0c4a6e;   /* Tools - Blue */
+  --cat3: #14532d;   /* Culture - Green */
+  --cat4: #881337;   /* KPIs - Rose */
+  --cat1-bg: #fffbeb;
+  --cat2-bg: #e0f2fe;
+  --cat3-bg: #dcfce7;
+  --cat4-bg: #fff1f2;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+  --shadow-md: 0 4px 16px rgba(0,0,0,.08), 0 2px 6px rgba(0,0,0,.05);
+  --shadow-lg: 0 20px 48px rgba(0,0,0,.10), 0 8px 16px rgba(0,0,0,.06);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 0% 0%, rgba(146,64,14,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 60% at 100% 100%, rgba(12,74,110,0.04) 0%, transparent 50%);
+  pointer-events: none; z-index: 0;
+}
+
+.container { max-width: 1320px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; }
+
+/* ─── HEADER ─── */
+header { padding: 3rem 0 2rem; border-bottom: 1px solid var(--border); margin-bottom: 2.5rem; }
+
+.header-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; }
+
+.brand-badge {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: #fffbeb; border: 1px solid rgba(146,64,14,0.25);
+  color: var(--gold); padding: .3rem 1rem; border-radius: 100px;
+  font-family: 'DM Mono', monospace; font-size: .68rem;
+  letter-spacing: .15em; text-transform: uppercase; margin-bottom: 1rem;
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 900; line-height: 1.08; letter-spacing: -0.02em;
+  color: var(--navy);
+}
+
+h1 em {
+  font-style: italic;
+  background: linear-gradient(135deg, #92400e, #c9a84c);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+.tagline {
+  margin-top: .75rem; font-size: .98rem; color: var(--text-muted);
+  font-weight: 300; max-width: 600px; line-height: 1.65;
+}
+
+.stats-row { display: flex; gap: 2.5rem; margin-top: 1.5rem; flex-wrap: wrap; }
+.stat { text-align: center; }
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem; font-weight: 700; color: var(--gold); line-height: 1;
+}
+.stat-label { font-size: .68rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: .1em; margin-top: .2rem; }
+
+.author-block { text-align: right; }
+.author-name { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--navy); }
+.author-role { font-size: .75rem; color: var(--text-muted); margin-top: .2rem; line-height: 1.65; }
+
+/* ─── SHARE BAR ─── */
+.share-bar {
+  background: var(--gold-pale); border: 1px solid rgba(146,64,14,0.18);
+  border-radius: 12px; padding: 1.1rem 1.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;
+}
+.share-text { font-size: .88rem; color: var(--navy); font-weight: 500; }
+.share-text span { color: var(--text-muted); font-size: .76rem; font-weight: 400; display: block; margin-top: .2rem; }
+.share-btn {
+  padding: .55rem 1.3rem; border-radius: 8px; font-size: .8rem; font-weight: 600;
+  cursor: pointer; border: none; background: #0a66c2; color: #fff;
+  font-family: 'DM Sans', sans-serif; transition: all .2s;
+  text-decoration: none; display: inline-block;
+}
+.share-btn:hover { background: #004182; }
+
+/* ─── CONTROLS ─── */
+.controls { display: flex; gap: .6rem; margin-bottom: 2rem; flex-wrap: wrap; align-items: center; }
+
+.search-wrap { flex: 1; min-width: 220px; position: relative; }
+.search-wrap::before {
+  content: '⌕'; position: absolute; left: 12px; top: 50%;
+  transform: translateY(-50%); color: var(--text-muted); font-size: 1.1rem; pointer-events: none;
+}
+
+#searchInput {
+  width: 100%; padding: .6rem 1rem .6rem 2.2rem;
+  border: 1.5px solid var(--border); border-radius: 8px;
+  font-family: 'DM Sans', sans-serif; font-size: .86rem;
+  background: var(--surface); color: var(--text-primary);
+  outline: none; transition: border-color .2s;
+  box-shadow: var(--shadow-sm);
+}
+#searchInput:focus { border-color: var(--gold); }
+#searchInput::placeholder { color: var(--text-muted); }
+
+.filter-btn {
+  padding: .45rem 1rem; border-radius: 100px; font-size: .78rem;
+  font-weight: 500; cursor: pointer; border: 1.5px solid var(--border);
+  background: var(--surface); color: var(--text-muted); transition: all .2s;
+  font-family: 'DM Sans', sans-serif; box-shadow: var(--shadow-sm);
+}
+.filter-btn[data-pillar="all"].active { background: var(--navy); color: #fff; border-color: var(--navy); }
+.filter-btn[data-pillar="Models"].active { background: var(--cat1-bg); color: var(--cat1); border-color: var(--cat1); }
+.filter-btn[data-pillar="Tools"].active { background: var(--cat2-bg); color: var(--cat2); border-color: var(--cat2); }
+.filter-btn[data-pillar="Culture"].active { background: var(--cat3-bg); color: var(--cat3); border-color: var(--cat3); }
+.filter-btn[data-pillar="KPIs"].active { background: var(--cat4-bg); color: var(--cat4); border-color: var(--cat4); }
+
+.random-btn {
+  padding: .5rem 1.2rem; border-radius: 8px; font-size: .82rem; font-weight: 600;
+  cursor: pointer; border: 1.5px solid rgba(146,64,14,.35);
+  background: var(--gold-pale); color: var(--gold); transition: all .2s;
+  font-family: 'DM Sans', sans-serif; white-space: nowrap;
+}
+.random-btn:hover { background: var(--gold); color: #fff; border-color: var(--gold); }
+
+.results-count { font-size: .74rem; color: var(--text-muted); font-family: 'DM Mono', monospace; white-space: nowrap; }
+
+/* ─── GRID ─── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.2rem; margin-bottom: 3rem;
+}
+
+/* ─── CARD ─── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: 14px; padding: 1.4rem;
+  cursor: pointer; transition: all .25s;
+  position: relative; overflow: hidden;
+  animation: fadeUp .4s ease forwards; opacity: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  border-radius: 14px 14px 0 0;
+}
+
+.card[data-cat="Models"]::before { background: var(--cat1); }
+.card[data-cat="Tools"]::before { background: var(--cat2); }
+.card[data-cat="Culture"]::before { background: var(--cat3); }
+.card[data-cat="KPIs"]::before { background: var(--cat4); }
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border);
+}
+
+.card.hidden { display: none; }
+.card.spotlight {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px rgba(146,64,14,.2), var(--shadow-md);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: .75rem; }
+
+.card-num {
+  font-family: 'DM Mono', monospace; font-size: .66rem;
+  color: var(--text-muted); background: var(--bg);
+  padding: .18rem .5rem; border-radius: 4px; border: 1px solid var(--border-light);
+}
+
+.cat-badge {
+  font-size: .63rem; font-weight: 600; padding: .2rem .6rem;
+  border-radius: 100px; text-transform: uppercase; letter-spacing: .08em;
+}
+
+.card[data-cat="Models"] .cat-badge { background: var(--cat1-bg); color: var(--cat1); border: 1px solid rgba(146,64,14,.25); }
+.card[data-cat="Tools"] .cat-badge { background: var(--cat2-bg); color: var(--cat2); border: 1px solid rgba(12,74,110,.25); }
+.card[data-cat="Culture"] .cat-badge { background: var(--cat3-bg); color: var(--cat3); border: 1px solid rgba(20,83,45,.25); }
+.card[data-cat="KPIs"] .cat-badge { background: var(--cat4-bg); color: var(--cat4); border: 1px solid rgba(136,19,55,.25); }
+
+.card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem; font-weight: 700; color: var(--navy);
+  line-height: 1.2; margin-bottom: .4rem;
+}
+
+.card-origin { font-size: .7rem; color: var(--text-muted); font-family: 'DM Mono', monospace; margin-bottom: .6rem; }
+
+.card-desc { font-size: .81rem; color: var(--text-secondary); line-height: 1.58;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+.card-footer {
+  margin-top: 1rem; padding-top: .75rem;
+  border-top: 1px solid var(--border-light);
+  display: flex; justify-content: space-between; align-items: center;
+}
+
+.complexity-tag { font-size: .68rem; color: var(--text-muted); font-family: 'DM Mono', monospace; }
+.learn-more { font-size: .74rem; color: var(--gold); font-weight: 600; letter-spacing: .04em; }
+
+/* ─── MODAL ─── */
+.modal-overlay {
+  position: fixed; inset: 0; background: rgba(10,20,10,.55);
+  z-index: 1000; display: flex; align-items: center; justify-content: center;
+  padding: 1.5rem; opacity: 0; pointer-events: none; transition: opacity .25s;
+  backdrop-filter: blur(6px);
+}
+.modal-overlay.open { opacity: 1; pointer-events: all; }
+
+.modal {
+  background: var(--surface); border-radius: 18px; max-width: 660px; width: 100%;
+  max-height: 90vh; overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+  transform: translateY(20px); transition: transform .25s;
+  position: relative; border: 1px solid var(--border);
+}
+.modal-overlay.open .modal { transform: translateY(0); }
+
+.modal-top-bar { height: 4px; border-radius: 18px 18px 0 0; }
+.modal-top-bar.Models { background: var(--cat1); }
+.modal-top-bar.Tools { background: var(--cat2); }
+.modal-top-bar.Culture { background: var(--cat3); }
+.modal-top-bar.KPIs { background: var(--cat4); }
+
+.modal-body { padding: 2rem; }
+
+.modal-meta { display: flex; gap: .5rem; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; }
+
+.modal-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.85rem; font-weight: 700; color: var(--navy); line-height: 1.12;
+  margin-bottom: .3rem;
+}
+.modal-origin { font-size: .76rem; color: var(--text-muted); font-family: 'DM Mono', monospace; margin-bottom: 1.2rem; }
+
+/* Article sections inside modal */
+.modal-section { margin-bottom: 1.3rem; }
+.modal-section-title {
+  font-size: .63rem; text-transform: uppercase; letter-spacing: .14em;
+  color: var(--text-muted); font-weight: 600; margin-bottom: .55rem;
+  font-family: 'DM Mono', monospace; display: flex; align-items: center; gap: .5rem;
+}
+.modal-section-title::before { content: ''; width: 16px; height: 1px; background: var(--text-muted); display: inline-block; }
+
+.modal-section-body {
+  font-size: .88rem; color: var(--text-secondary); line-height: 1.72;
+}
+
+/* Definition callout box */
+.def-callout {
+  background: #f0fdf4; border-left: 3px solid var(--cat3);
+  border-radius: 0 8px 8px 0; padding: .9rem 1.1rem; margin-bottom: .6rem;
+}
+.def-callout p { font-size: .86rem; color: var(--text-secondary); line-height: 1.72; }
+
+/* How to apply steps */
+.apply-list { list-style: none; display: flex; flex-direction: column; gap: .5rem; margin-top: .2rem; }
+.apply-list li { display: flex; gap: .7rem; align-items: flex-start; font-size: .85rem; color: var(--text-secondary); line-height: 1.65; }
+.apply-list li::before { content: '→'; color: var(--gold); flex-shrink: 0; font-size: .8rem; margin-top: .06rem; }
+
+/* Benefits pills */
+.benefit-list { list-style: none; display: flex; flex-direction: column; gap: .45rem; margin-top: .2rem; }
+.benefit-list li { display: flex; gap: .7rem; align-items: flex-start; font-size: .85rem; color: var(--text-secondary); line-height: 1.65; }
+.benefit-list li::before { content: '◆'; color: var(--cat2); font-size: .45rem; flex-shrink: 0; margin-top: .52rem; }
+
+.modal-tags { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .3rem; }
+.modal-tag {
+  font-size: .7rem; padding: .22rem .62rem; border-radius: 4px;
+  background: var(--bg); border: 1px solid var(--border);
+  color: var(--text-secondary); font-family: 'DM Mono', monospace;
+}
+
+.modal-close {
+  position: absolute; top: 1.1rem; right: 1.1rem;
+  width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--border);
+  background: var(--bg); cursor: pointer; font-size: .85rem; color: var(--text-muted);
+  display: flex; align-items: center; justify-content: center; transition: all .2s; z-index: 10;
+}
+.modal-close:hover { background: var(--cat4-bg); color: var(--cat4); border-color: var(--cat4); }
+
+.modal-nav { display: flex; gap: .6rem; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-light); }
+.modal-nav-btn {
+  flex: 1; padding: .62rem; border-radius: 8px; font-size: .8rem;
+  font-weight: 500; cursor: pointer; border: 1.5px solid var(--border);
+  background: var(--surface); color: var(--text-muted); transition: all .2s;
+  font-family: 'DM Sans', sans-serif;
+}
+.modal-nav-btn:hover { border-color: var(--gold); color: var(--gold); }
+.modal-nav-btn.primary { background: var(--navy); color: #fff; border-color: var(--navy); }
+.modal-nav-btn.primary:hover { background: var(--navy-mid); }
+
+/* ─── SPINNING WHEEL ─── */
+.wheel-overlay {
+  position: fixed; inset: 0; background: rgba(10,20,10,.6);
+  z-index: 2000; display: flex; align-items: center; justify-content: center;
+  padding: 1.5rem; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s; backdrop-filter: blur(6px);
+}
+.wheel-overlay.open { opacity: 1; pointer-events: all; }
+
+.wheel-box {
+  background: var(--surface); border-radius: 20px; padding: 2rem 2rem 1.8rem;
+  max-width: 420px; width: 100%; text-align: center; position: relative;
+  box-shadow: var(--shadow-lg); border: 1px solid var(--border);
+  transform: scale(0.9); transition: transform 0.3s;
+}
+.wheel-overlay.open .wheel-box { transform: scale(1); }
+
+.wheel-title { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 700; color: var(--navy); margin-bottom: 0.3rem; }
+.wheel-sub { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1.2rem; }
+.wheel-wrap { position: relative; display: inline-block; margin-bottom: 1.2rem; }
+.wheel-pointer {
+  position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+  font-size: 1.4rem; color: var(--gold); z-index: 10;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+  animation: pointerBob 1.5s ease-in-out infinite;
+}
+@keyframes pointerBob {
+  0%,100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-3px); }
+}
+#wheelCanvas { border-radius: 50%; box-shadow: var(--shadow-md), 0 0 0 4px var(--gold), 0 0 0 8px var(--gold-pale); display: block; }
+.wheel-spin-btn {
+  display: inline-block; padding: 0.8rem 2.5rem;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  color: #fff; border: none; border-radius: 100px;
+  font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 700;
+  cursor: pointer; letter-spacing: 0.08em;
+  box-shadow: 0 4px 16px rgba(146,64,14,0.3);
+  transition: all 0.2s; margin-bottom: 1rem;
+}
+.wheel-spin-btn:hover { transform: scale(1.05); box-shadow: 0 6px 24px rgba(146,64,14,0.4); }
+.wheel-spin-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+.wheel-result { min-height: 56px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.3rem; }
+.wheel-result-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 700; color: var(--navy); }
+.wheel-result-cat { font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.7rem; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.08em; }
+.wheel-explore-btn {
+  margin-top: 0.5rem; padding: 0.5rem 1.4rem;
+  background: var(--navy); color: #fff; border: none; border-radius: 8px;
+  font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 600;
+  cursor: pointer; transition: background 0.2s;
+}
+.wheel-explore-btn:hover { background: var(--navy-mid); }
+
+/* ─── FOOTER ─── */
+footer {
+  border-top: 1px solid var(--border); padding: 2rem 0;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 1rem;
+}
+.footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 700; color: var(--navy); }
+.footer-tags { display: flex; gap: .5rem; flex-wrap: wrap; }
+.footer-tag { font-size: .7rem; color: var(--text-muted); font-family: 'DM Mono', monospace; }
+.footer-copy { font-size: .72rem; color: var(--text-muted); width: 100%; margin-top: .5rem; }
+
+@media (max-width: 600px) {
+  .grid { grid-template-columns: 1fr; }
+  h1 { font-size: 2rem; }
+  .stats-row { gap: 1.5rem; }
+}
+
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 0% 0%, rgba(201,168,76,0.07) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 60% at 100% 100%, rgba(45,63,110,0.05) 0%, transparent 50%);
+  pointer-events: none; z-index: 0;
+}
+
+.container { max-width: 1320px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; }
+
+/* ─── HEADER ─── */
+header { padding: 3rem 0 2rem; border-bottom: 1px solid var(--border); margin-bottom: 2.5rem; }
+
+.header-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; }
+
+.brand-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  border: 1px solid var(--gold); color: var(--gold-dark);
+  padding: 0.3rem 1rem; border-radius: 100px;
+  font-family: 'DM Mono', monospace; font-size: 0.68rem;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  background: var(--gold-pale); margin-bottom: 1rem;
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 700; line-height: 1.05;
+  letter-spacing: -0.02em; color: var(--navy);
+}
+
+h1 em { font-style: italic; color: var(--gold-dark); }
+
+.tagline {
+  margin-top: 0.75rem; font-size: 1rem; color: var(--text-secondary);
+  font-weight: 300; letter-spacing: 0.01em; max-width: 600px;
+}
+
+.stats-row {
+  display: flex; gap: 2.5rem; margin-top: 1.5rem; flex-wrap: wrap;
+}
+
+.stat { text-align: center; }
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem; font-weight: 700; color: var(--gold-dark); line-height: 1;
+}
+.stat-label { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.2rem; }
+
+.author-block { text-align: right; }
+.author-name { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--navy); }
+.author-role { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem; }
+
+/* ─── CONTROLS ─── */
+.controls { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; align-items: center; }
+
+.search-wrap {
+  flex: 1; min-width: 220px; position: relative;
+}
+
+.search-wrap::before {
+  content: '⌕'; position: absolute; left: 14px; top: 50%;
+  transform: translateY(-50%); color: var(--text-muted); font-size: 1.1rem;
+  pointer-events: none;
+}
+
+#searchInput {
+  width: 100%; padding: 0.65rem 1rem 0.65rem 2.4rem;
+  border: 1.5px solid var(--border); border-radius: 8px;
+  font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
+  background: var(--surface); color: var(--text-primary);
+  outline: none; transition: border-color 0.2s;
+}
+
+#searchInput:focus { border-color: var(--gold); }
+
+.filter-tabs { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+
+.results-count {
+  font-size: 0.8rem; color: var(--text-muted);
+  font-family: 'DM Mono', monospace; padding: 0.5rem 0;
+  white-space: nowrap;
+}
+
+/* ─── GRID ─── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 3rem;
+}
+
+/* ─── CARD ─── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  padding: 1.4rem;
+  cursor: pointer;
+  transition: all 0.25s;
+  position: relative;
+  overflow: hidden;
+  animation: fadeUp 0.4s ease forwards;
+  opacity: 0;
+}
+
+.card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  border-radius: 14px 14px 0 0;
+}
+
+.card[data-cat="Models"]::before { background: var(--cat1); }
+.card[data-cat="Tools"]::before { background: var(--cat2); }
+.card[data-cat="Culture"]::before { background: var(--cat3); }
+.card[data-cat="KPIs"]::before { background: var(--cat4); }
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+  border-color: var(--border);
+}
+
+.card.hidden { display: none; }
+.card.spotlight {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px rgba(201,168,76,0.2), 0 12px 32px rgba(201,168,76,0.15);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; }
+
+.card-num {
+  font-family: 'DM Mono', monospace; font-size: 0.68rem;
+  color: var(--text-muted); background: var(--bg);
+  padding: 0.2rem 0.5rem; border-radius: 4px;
+  border: 1px solid var(--border-light);
+}
+
+.cat-badge {
+  font-size: 0.65rem; font-weight: 600; padding: 0.2rem 0.6rem;
+  border-radius: 100px; text-transform: uppercase; letter-spacing: 0.08em;
+}
+
+.card[data-cat="Models"] .cat-badge { background: var(--cat1-bg); color: var(--cat1); border: 1px solid rgba(201,168,76,0.3); }
+.card[data-cat="Tools"] .cat-badge { background: var(--cat2-bg); color: var(--cat2); border: 1px solid rgba(45,106,138,0.3); }
+.card[data-cat="Culture"] .cat-badge { background: var(--cat3-bg); color: var(--cat3); border: 1px solid rgba(90,122,58,0.3); }
+.card[data-cat="KPIs"] .cat-badge { background: var(--cat4-bg); color: var(--cat4); border: 1px solid rgba(138,58,90,0.3); }
+
+.card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem; font-weight: 700; color: var(--navy);
+  line-height: 1.2; margin-bottom: 0.4rem;
+}
+
+.card-origin {
+  font-size: 0.72rem; color: var(--text-muted);
+  font-family: 'DM Mono', monospace; margin-bottom: 0.6rem;
+}
+
+.card-desc {
+  font-size: 0.82rem; color: var(--text-secondary); line-height: 1.55;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+
+.card-footer {
+  margin-top: 1rem; padding-top: 0.75rem;
+  border-top: 1px solid var(--border-light);
+  display: flex; justify-content: space-between; align-items: center;
+}
+
+.complexity-tag {
+  font-size: 0.68rem; color: var(--text-muted);
+  font-family: 'DM Mono', monospace;
+}
+
+.learn-more {
+  font-size: 0.75rem; color: var(--gold-dark); font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+/* ─── MODAL ─── */
+.modal-overlay {
+  position: fixed; inset: 0; background: rgba(15,15,15,0.6);
+  z-index: 1000; display: flex; align-items: center; justify-content: center;
+  padding: 1.5rem; opacity: 0; pointer-events: none; transition: opacity 0.25s;
+  backdrop-filter: blur(4px);
+}
+
+.modal-overlay.open { opacity: 1; pointer-events: all; }
+
+.modal {
+  background: var(--surface); border-radius: 18px; max-width: 640px; width: 100%;
+  max-height: 88vh; overflow-y: auto;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.2);
+  transform: translateY(20px); transition: transform 0.25s;
+  position: relative;
+}
+
+.modal-overlay.open .modal { transform: translateY(0); }
+
+.modal-top-bar { height: 4px; border-radius: 18px 18px 0 0; }
+.modal-top-bar.Models { background: var(--cat1); }
+.modal-top-bar.Tools { background: var(--cat2); }
+.modal-top-bar.Culture { background: var(--cat3); }
+.modal-top-bar.KPIs { background: var(--cat4); }
+
+.modal-body { padding: 2rem; }
+
+.modal-meta { display: flex; gap: 0.5rem; align-items: center; margin-bottom: 1.2rem; flex-wrap: wrap; }
+
+.modal-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem; font-weight: 700; color: var(--navy); line-height: 1.15;
+  margin-bottom: 0.4rem;
+}
+
+.modal-origin { font-size: 0.78rem; color: var(--text-muted); font-family: 'DM Mono', monospace; margin-bottom: 1.2rem; }
+
+.modal-section { margin-bottom: 1.2rem; }
+.modal-section-title {
+  font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--text-muted); font-weight: 600; margin-bottom: 0.5rem;
+  font-family: 'DM Mono', monospace;
+}
+.modal-section p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.65; }
+
+.modal-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
+.modal-tag {
+  font-size: 0.72rem; padding: 0.25rem 0.65rem; border-radius: 4px;
+  background: var(--bg); border: 1px solid var(--border);
+  color: var(--text-secondary); font-family: 'DM Mono', monospace;
+}
+
+.modal-close {
+  position: absolute; top: 1.2rem; right: 1.2rem;
+  width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--border);
+  background: var(--bg); cursor: pointer; font-size: 1rem; color: var(--text-muted);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+}
+.modal-close:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
+
+.modal-nav { display: flex; gap: 0.75rem; margin-top: 1.5rem; }
+.modal-nav-btn {
+  flex: 1; padding: 0.65rem; border-radius: 8px; font-size: 0.82rem;
+  font-weight: 500; cursor: pointer; border: 1.5px solid var(--border);
+  background: var(--bg); color: var(--text-secondary); transition: all 0.2s;
+  font-family: 'DM Sans', sans-serif;
+}
+.modal-nav-btn:hover { border-color: var(--gold); color: var(--gold-dark); }
+.modal-nav-btn.primary { background: var(--navy); color: #fff; border-color: var(--navy); }
+.modal-nav-btn.primary:hover { background: var(--navy-mid); }
+
+/* ─── SPINNING WHEEL ─── */
+.wheel-overlay {
+  position: fixed; inset: 0; background: rgba(10,10,20,0.75);
+  z-index: 2000; display: flex; align-items: center; justify-content: center;
+  padding: 1.5rem; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s; backdrop-filter: blur(6px);
+}
+.wheel-overlay.open { opacity: 1; pointer-events: all; }
+
+.wheel-box {
+  background: var(--surface); border-radius: 20px; padding: 2rem 2rem 1.8rem;
+  max-width: 420px; width: 100%; text-align: center; position: relative;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.35);
+  border: 1px solid var(--border);
+  transform: scale(0.9); transition: transform 0.3s;
+}
+.wheel-overlay.open .wheel-box { transform: scale(1); }
+
+.wheel-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.7rem; font-weight: 700; color: var(--navy); margin-bottom: 0.3rem;
+}
+.wheel-sub { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1.2rem; }
+
+.wheel-wrap { position: relative; display: inline-block; margin-bottom: 1.2rem; }
+
+.wheel-pointer {
+  position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+  font-size: 1.4rem; color: var(--gold-dark); z-index: 10;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  animation: pointerBob 1.5s ease-in-out infinite;
+}
+@keyframes pointerBob {
+  0%,100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-3px); }
+}
+
+#wheelCanvas {
+  border-radius: 50%;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 0 0 4px var(--gold), 0 0 0 8px var(--gold-pale);
+  display: block;
+}
+
+.wheel-spin-btn {
+  display: inline-block; padding: 0.8rem 2.5rem;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  color: #fff; border: none; border-radius: 100px;
+  font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 700;
+  cursor: pointer; letter-spacing: 0.08em;
+  box-shadow: 0 4px 16px rgba(201,168,76,0.4);
+  transition: all 0.2s; margin-bottom: 1rem;
+}
+.wheel-spin-btn:hover { transform: scale(1.05); box-shadow: 0 6px 24px rgba(201,168,76,0.5); }
+.wheel-spin-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+.wheel-result {
+  min-height: 56px; display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 0.3rem;
+}
+.wheel-result-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem; font-weight: 700; color: var(--navy);
+}
+.wheel-result-cat {
+  font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.7rem;
+  border-radius: 100px; text-transform: uppercase; letter-spacing: 0.08em;
+}
+.wheel-explore-btn {
+  margin-top: 0.5rem; padding: 0.5rem 1.4rem;
+  background: var(--navy); color: #fff; border: none; border-radius: 8px;
+  font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 600;
+  cursor: pointer; transition: background 0.2s;
+}
+.wheel-explore-btn:hover { background: var(--navy-mid); }
+
+/* ─── FOOTER ─── */
+footer {
+  border-top: 1px solid var(--border); padding: 2rem 0;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 1rem;
+}
+
+.footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 700; color: var(--navy); }
+.footer-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.footer-tag { font-size: 0.72rem; color: var(--text-muted); font-family: 'DM Mono', monospace; }
+.footer-copy { font-size: 0.75rem; color: var(--text-muted); width: 100%; margin-top: 0.5rem; }
+
+/* ─── SHARE ─── */
+.share-bar {
+  background: var(--gold-pale); border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 12px; padding: 1.2rem 1.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;
+}
+
+.share-text { font-size: 0.88rem; color: var(--navy); font-weight: 500; }
+.share-text span { color: var(--text-muted); font-size: 0.78rem; font-weight: 400; display: block; margin-top: 0.2rem; }
+
+.share-btn {
+  padding: 0.6rem 1.4rem; border-radius: 8px; font-size: 0.82rem; font-weight: 600;
+  cursor: pointer; border: none; background: #0a66c2; color: #fff;
+  font-family: 'DM Sans', sans-serif; transition: all 0.2s;
+  text-decoration: none; display: inline-block;
+}
+.share-btn:hover { background: #004182; }
+
+@media (max-width: 600px) {
+  .grid { grid-template-columns: 1fr; }
+  h1 { font-size: 2rem; }
+  .stats-row { gap: 1.5rem; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- HEADER -->
+<header>
+  <div class="header-top">
+    <div>
+      <div class="brand-badge">◈ Weekend Learning Library · Vol. 2</div>
+      <h1>The Excellence <em>Edge</em><br>Function Knowledge Hub</h1>
+      <p class="tagline">100 Excellence tools, models, frameworks & KPIs every leader should know — curated for continuous learners.</p>
+      <div class="stats-row">
+        <div class="stat"><div class="stat-num">100</div><div class="stat-label">Topics</div></div>
+        <div class="stat"><div class="stat-num">4</div><div class="stat-label">Categories</div></div>
+        <div class="stat"><div class="stat-num">50+</div><div class="stat-label">Years of Wisdom</div></div>
+        <div class="stat"><div class="stat-num">∞</div><div class="stat-label">Growth Potential</div></div>
+      </div>
+    </div>
+    <div class="author-block">
+      <div class="author-name">Subramanian Shanmugam</div>
+      <div class="author-role">Quality & Excellence Manager<br>Continuous Improvement Leader<br>Weekend Learning Curator</div>
+    </div>
+  </div>
+</header>
+
+<!-- SHARE BAR -->
+<div class="share-bar">
+  <div class="share-text">
+    Found this useful? Share with your LinkedIn network!
+    <span>Tag a fellow Excellence professional who would benefit from this Weekend Learning Library.</span>
+  </div>
+  <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https://subramanian-qm.github.io/Excellence-index/" target="_blank">Share on LinkedIn</a>
+</div>
+
+<!-- CONTROLS -->
+<div class="controls">
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search topics, models, frameworks..." oninput="filterCards()">
+  </div>
+  <div class="filter-tabs">
+    <button class="filter-btn active" data-cat="all" onclick="filterCat('all',this)">All</button>
+    <button class="filter-btn" data-cat="Models" onclick="filterCat('Models',this)">Models</button>
+    <button class="filter-btn" data-cat="Tools" onclick="filterCat('Tools',this)">Tools & Frameworks</button>
+    <button class="filter-btn" data-cat="Culture" onclick="filterCat('Culture',this)">Culture & Leadership</button>
+    <button class="filter-btn" data-cat="KPIs" onclick="filterCat('KPIs',this)">KPIs & Metrics</button>
+  </div>
+  <button class="random-btn" onclick="openWheel()">🎰 Spin the Wheel</button>
+  <div class="results-count" id="resultsCount">100 topics</div>
+</div>
+
+<!-- GRID -->
+<div class="grid" id="grid"></div>
+
+<!-- SPINNING WHEEL -->
+<div class="wheel-overlay" id="wheelOverlay" onclick="closeWheelOutside(event)">
+  <div class="wheel-box">
+    <button class="modal-close" onclick="closeWheel()" style="position:absolute;top:1rem;right:1rem">✕</button>
+    <div class="wheel-title">Excellence Roulette</div>
+    <div class="wheel-sub">Spin to discover your next learning topic</div>
+    <div class="wheel-wrap">
+      <div class="wheel-pointer">▼</div>
+      <canvas id="wheelCanvas" width="340" height="340"></canvas>
+    </div>
+    <button class="wheel-spin-btn" id="wheelSpinBtn" onclick="spinWheel()">🎰 SPIN</button>
+    <div class="wheel-result" id="wheelResult"></div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" id="modal">
+    <div class="modal-top-bar" id="modalBar"></div>
+    <button class="modal-close" onclick="closeModalBtn()">✕</button>
+    <div class="modal-body"></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-brand">The Excellence Edge</div>
+    <div class="footer-tags">
+      <span class="footer-tag">#TheExcellenceEdge</span>
+      <span class="footer-tag">#WeekendLearning</span>
+      <span class="footer-tag">#EFQM</span>
+      <span class="footer-tag">#Baldrige</span>
+      <span class="footer-tag">#Excellence</span>
+      <span class="footer-tag">#ContinuousImprovement</span>
+    </div>
+  </div>
+  <div style="text-align:right">
+    <div style="font-size:0.78rem;color:var(--text-muted)">Curated by Subramanian Shanmugam</div>
+    <div style="font-size:0.72rem;color:var(--text-muted);margin-top:0.2rem">Weekend Learning Library — Vol. 2</div>
+  </div>
+  <div class="footer-copy">© 2026 The Excellence Edge · Curated by Subramanian Shanmugam · Free to share with attribution · Knowledge grows when shared</div>
+</footer>
+
+</div><!-- /container -->
+
+<script>
+const topics = [
+  // ─── MODELS (25) ───
+  { id:1, cat:"Models", title:"EFQM Excellence Model", origin:"European Foundation for Quality Management, 1988", complexity:"Advanced", desc:"A globally recognised framework for organisational excellence based on leadership, strategy, people, partnerships, and processes.", what:"The EFQM Model is a practical, non-prescriptive framework used by organisations to assess where they are on the path to excellence. It is based on cause-and-effect logic: what an organisation does leads to the results it achieves.", how:"Apply EFQM by conducting a self-assessment against its 7 criteria. Score each criterion, identify strengths and improvement areas, and integrate findings into strategic planning cycles.", benefits:"Provides a holistic view of the organisation, drives continuous improvement, and enables benchmarking against world-class standards.", tags:["RADAR Logic","Business Excellence","Self-Assessment","TQM"] },
+  { id:2, cat:"Models", title:"Malcolm Baldrige Criteria", origin:"USA, 1987 — National Institute of Standards", complexity:"Advanced", desc:"A US national excellence framework covering leadership, strategy, customers, measurement, workforce, operations, and results.", what:"The Baldrige Criteria for Performance Excellence is a set of questions that guides organisations to assess their management practices and results across seven integrated categories.", how:"Use the Baldrige Criteria as a self-assessment tool. Apply the ADLI (Approach, Deployment, Learning, Integration) scoring system to identify gaps and set improvement priorities.", benefits:"Drives sustained performance, fosters organisational learning, and provides a pathway to the prestigious Baldrige Award recognition.", tags:["ADLI","Performance Excellence","USA","Leadership"] },
+  { id:3, cat:"Models", title:"Deming Prize Criteria", origin:"Japan, 1951 — JUSE", complexity:"Advanced", desc:"Japan's premier quality award criteria focused on TQM implementation, statistical methods, and policy deployment.", what:"The Deming Prize evaluates the extent to which an organisation has established and is practicing TQM. It focuses on the effective implementation of quality activities across the entire organisation.", how:"Apply TQM principles systematically, use statistical process control, align policy deployment (Hoshin Kanri), and conduct regular self-assessments against the 10 Deming Prize examination criteria.", benefits:"Builds world-class quality culture, accelerates TQM maturity, and provides international recognition for quality excellence.", tags:["TQM","Hoshin Kanri","JUSE","Japan"] },
+  { id:4, cat:"Models", title:"ISO 9001 Quality Management", origin:"ISO, 1987 — International Organisation for Standardisation", complexity:"Intermediate", desc:"The world's most widely used quality management system standard based on seven quality management principles.", what:"ISO 9001 specifies requirements for a quality management system where an organisation needs to demonstrate its ability to consistently provide products and services that meet customer requirements.", how:"Implement a QMS aligned to ISO 9001 clauses. Conduct internal audits, management reviews, and take corrective actions. Certify through an accredited third-party certification body.", benefits:"Improves customer satisfaction, drives process consistency, opens global market access, and provides a foundation for continual improvement.", tags:["QMS","Certification","ISO","Process Approach"] },
+  { id:5, cat:"Models", title:"ISO 56001 Innovation Management", origin:"ISO, 2024", complexity:"Advanced", desc:"The world's first international standard for innovation management systems — enabling organisations to drive purposeful innovation.", what:"ISO 56001 provides requirements for establishing, implementing, and continually improving an innovation management system. It helps organisations create value through innovation in a structured way.", how:"Build an innovation strategy, establish innovation governance, create an enabling culture, manage innovation portfolios, and measure innovation performance systematically.", benefits:"Creates competitive advantage, embeds innovation as a core organisational capability, and aligns innovation activity with strategic objectives.", tags:["Innovation","ISO 56000","Strategy","Value Creation"] },
+  { id:6, cat:"Models", title:"Lean Management System", origin:"Toyota Production System, 1950s Japan", complexity:"Intermediate", desc:"A systematic approach to eliminating waste, improving flow, and creating value from the customer's perspective.", what:"Lean is a management philosophy derived from the Toyota Production System. It focuses on identifying and eliminating the 8 wastes (TIMWOODS) while maximising value to the customer.", how:"Apply value stream mapping to identify waste, implement 5S, create pull systems, adopt standard work, and use kaizen for continuous improvement. Engage all employees in waste elimination.", benefits:"Reduces costs, improves quality and speed, increases customer satisfaction, and creates a culture of continuous improvement.", tags:["Toyota","Waste Elimination","Value Stream","Kaizen"] },
+  { id:7, cat:"Models", title:"Six Sigma DMAIC", origin:"Motorola, 1986 — Mikel Harry", complexity:"Advanced", desc:"A data-driven methodology for eliminating defects and reducing variation using Define, Measure, Analyse, Improve, Control.", what:"Six Sigma is a disciplined, statistical approach to eliminate defects in any process. DMAIC is its core improvement roadmap: Define the problem, Measure current performance, Analyse root causes, Improve the process, Control the new state.", how:"Train Green and Black Belts, select high-impact projects, follow the DMAIC roadmap rigorously, use statistical tools (ANOVA, regression, DOE), and sustain gains with control plans.", benefits:"Dramatically reduces defects and variation, delivers significant cost savings, improves customer satisfaction, and builds analytical capability.", tags:["DMAIC","Black Belt","Statistical Tools","Defect Reduction"] },
+  { id:8, cat:"Models", title:"Total Quality Management (TQM)", origin:"W. Edwards Deming & Joseph Juran, 1950s", complexity:"Intermediate", desc:"A management approach based on the principle that every member of an organisation participates in improving processes, products, and culture.", what:"TQM is a holistic approach to long-term success through customer satisfaction. It involves all members of an organisation participating in improving processes, products, services, and the culture in which they work.", how:"Establish a quality policy, engage leadership, empower employees, implement customer focus, use data for decision making, and create systems for continuous improvement across all functions.", benefits:"Builds a quality culture, improves customer loyalty, reduces costs of poor quality, and aligns the whole organisation toward excellence.", tags:["Deming","Customer Focus","Culture","14 Points"] },
+  { id:9, cat:"Models", title:"Business Process Reengineering", origin:"Hammer & Champy, 1993", complexity:"Advanced", desc:"A radical redesign of core business processes to achieve dramatic improvements in performance, cost, quality, and speed.", what:"BPR involves the fundamental rethinking and radical redesign of business processes to achieve dramatic improvements. Unlike incremental improvement, BPR questions the very foundation of how work is done.", how:"Identify core processes to reengineer, map current state, challenge every assumption, design the future state with a clean-sheet approach, and implement with strong change management.", benefits:"Achieves breakthrough performance improvements, eliminates non-value-adding activities, and aligns processes with strategic goals.", tags:["Process Design","Transformation","Change Management","Radical Change"] },
+  { id:10, cat:"Models", title:"Balanced Scorecard", origin:"Kaplan & Norton, 1992 — Harvard Business School", complexity:"Intermediate", desc:"A strategic planning and management system that links business activities to the organisation's vision across four perspectives.", what:"The Balanced Scorecard translates an organisation's vision into a set of performance measures distributed among four perspectives: Financial, Customer, Internal Processes, and Learning & Growth.", how:"Define strategic objectives for each perspective, develop KPIs, set targets, design initiatives, and cascade the scorecard throughout the organisation as a management framework.", benefits:"Aligns day-to-day work with strategy, balances short and long-term objectives, improves communication, and enables performance dialogue at all levels.", tags:["Strategy Maps","KPIs","Kaplan Norton","Four Perspectives"] },
+  { id:11, cat:"Models", title:"EFQM RADAR Logic", origin:"EFQM, 1999", complexity:"Intermediate", desc:"The EFQM assessment and scoring methodology: Results, Approach, Deployment, Assessment & Refinement.", what:"RADAR is the dynamic assessment framework at the heart of the EFQM Model. It determines what an organisation needs to achieve (Results), how it plans to achieve it (Approach, Deployment), and how it reviews and improves approaches (Assessment & Refinement).", how:"Use RADAR scoring matrices during EFQM self-assessments. Score Enablers on Approach and Deployment attributes, and Results on Relevance, Usefulness, and Performance attributes.", benefits:"Provides a structured, consistent basis for organisational assessment and comparison, and drives continuous improvement cycles.", tags:["EFQM","Self-Assessment","Scoring","Benchmarking"] },
+  { id:12, cat:"Models", title:"Shingo Model for Operational Excellence", origin:"Shingo Institute, Utah State University", complexity:"Advanced", desc:"A framework for sustainable excellence based on the principle that ideal results require ideal behaviours driven by correct principles.", what:"The Shingo Model is built on the insight that sustainable excellence comes from transforming culture — where people do the right things for the right reasons. It defines three tiers: Cultural Enablers, Continuous Improvement, and Enterprise Alignment.", how:"Assess your organisation against the Shingo Guiding Principles, identify cultural and behavioural gaps, align systems to drive desired behaviours, and use Shingo workshops for team education.", benefits:"Creates culturally sustainable excellence, goes beyond tools and techniques to address root behaviours, and provides a roadmap to enterprise-wide transformation.", tags:["Cultural Transformation","Guiding Principles","Operational Excellence","Sustainability"] },
+  { id:13, cat:"Models", title:"ISO 31000 Risk Management", origin:"ISO, 2009 (revised 2018)", complexity:"Intermediate", desc:"An international standard providing principles, framework, and process for managing risk in any organisation.", what:"ISO 31000 provides generic guidelines on risk management. It defines risk as the effect of uncertainty on objectives, and provides a universal framework applicable to any organisation regardless of size or sector.", how:"Establish context, identify risks, analyse and evaluate them, treat risks using appropriate controls, and monitor and review the risk management process continuously.", benefits:"Improves decision making, reduces uncertainty, protects organisational value, and builds stakeholder confidence.", tags:["Risk Framework","Risk Treatment","Uncertainty","Governance"] },
+  { id:14, cat:"Models", title:"PDCA Cycle (Deming Wheel)", origin:"W. Edwards Deming, 1950s", complexity:"Beginner", desc:"Plan-Do-Check-Act — the fundamental cycle for continuous improvement in any process or system.", what:"The PDCA cycle is a four-step iterative management method for continuous improvement. Plan: identify a goal or problem. Do: implement a solution. Check: evaluate results. Act: standardise or restart the cycle.", how:"Apply PDCA to any improvement activity. Use it as a daily management discipline, as the backbone of problem-solving, and as the improvement engine behind ISO, EFQM, and Lean systems.", benefits:"Simple yet powerful framework for learning and improvement, applicable to any process, embeds a scientific approach to problem solving.", tags:["Deming","Continuous Improvement","Problem Solving","PDSA"] },
+  { id:15, cat:"Models", title:"Hoshin Kanri (Policy Deployment)", origin:"Japan, 1960s — Toyota & Bridgestone", complexity:"Advanced", desc:"A strategic planning method that aligns the organisation's goals, activities, and measures from the top to the front line.", what:"Hoshin Kanri means 'policy deployment' or 'direction management'. It is a systematic process for strategy deployment that ensures strategic goals are communicated and translated into actions at every level of the organisation.", how:"Define 3-5 year breakthrough objectives, deploy them through annual hoshin plans using X-Matrix, conduct catchball dialogue at each level, and review monthly with a disciplined PDCA rhythm.", benefits:"Aligns the whole organisation with strategy, eliminates conflicting priorities, accelerates breakthrough improvement, and builds organisational capability.", tags:["X-Matrix","Strategy Deployment","Catchball","Breakthrough Goals"] },
+  { id:16, cat:"Models", title:"European Quality Award (EQA)", origin:"EFQM, 1992", complexity:"Advanced", desc:"Europe's most prestigious quality and excellence recognition award based on the EFQM Excellence Model.", what:"The EQA (now EFQM Global Award) recognises organisations that demonstrate exceptional results and serve as role models for excellence in Europe and globally. It is assessed by trained EFQM assessors using the RADAR framework.", how:"Build excellence practices over several years, conduct rigorous EFQM self-assessments, submit a comprehensive application document, and receive site visit by an assessor team.", benefits:"Provides independent validation of excellence, drives breakthrough improvement, raises the organisation's profile, and enables global benchmarking.", tags:["EFQM","Award","Recognition","Benchmarking"] },
+  { id:17, cat:"Models", title:"Capability Maturity Model (CMMI)", origin:"Carnegie Mellon University, 1991", complexity:"Advanced", desc:"A model for process improvement that provides organisations with essential elements of effective processes for development and services.", what:"CMMI defines five maturity levels — Initial, Managed, Defined, Quantitatively Managed, and Optimising. It helps organisations improve their processes and build capability incrementally.", how:"Conduct a CMMI appraisal to establish baseline maturity, define process improvement roadmaps, implement process areas, and progress through maturity levels with structured programme governance.", benefits:"Improves process predictability, reduces risk, increases quality, and enables organisations to scale improvement efforts systematically.", tags:["Process Maturity","5 Levels","CMMI-DEV","Software Quality"] },
+  { id:18, cat:"Models", title:"Theory of Constraints (TOC)", origin:"Dr. Eliyahu Goldratt, 1984", complexity:"Intermediate", desc:"A management philosophy that focuses on identifying and removing the single biggest constraint limiting a system's performance.", what:"TOC is based on the insight that every system has at least one constraint that limits its output. By identifying and elevating the constraint (bottleneck), the whole system's performance improves dramatically.", how:"Apply the Five Focusing Steps: Identify the constraint, Exploit it, Subordinate everything else to it, Elevate it, and prevent inertia from becoming the new constraint.", benefits:"Dramatically improves throughput, focuses limited improvement resources on the highest-leverage point, and delivers rapid measurable results.", tags:["Bottleneck","Throughput","Five Focusing Steps","Drum-Buffer-Rope"] },
+  { id:19, cat:"Models", title:"Agile Excellence Framework", origin:"Agile Manifesto, 2001 — Beck, Sutherland et al.", complexity:"Intermediate", desc:"Applying agile principles of iteration, collaboration, and customer focus to drive excellence across organisational functions.", what:"Agile Excellence applies the four values and twelve principles of the Agile Manifesto beyond software development to business operations, quality, and organisational improvement — enabling faster, more adaptive excellence journeys.", how:"Implement sprints for improvement projects, use retrospectives for team learning, adopt kanban for workflow management, and measure outcomes over outputs in your excellence programmes.", benefits:"Increases speed of improvement, improves cross-functional collaboration, enables rapid response to change, and builds a learning organisation.", tags:["Scrum","Kanban","Iteration","Retrospective"] },
+  { id:20, cat:"Models", title:"ISO 45001 OH&S Management", origin:"ISO, 2018", complexity:"Intermediate", desc:"An international standard for occupational health and safety management systems, replacing OHSAS 18001.", what:"ISO 45001 provides a framework for managing occupational health and safety risks and opportunities. It uses the high-level structure (Annex SL) consistent with ISO 9001 and ISO 14001, enabling integrated management systems.", how:"Conduct a hazard identification and risk assessment, establish OH&S objectives, implement controls, and certify through a third-party body. Integrate with quality and environmental management systems.", benefits:"Reduces workplace incidents, demonstrates duty of care, fulfils legal obligations, and enhances employee wellbeing and morale.", tags:["OH&S","Safety","Risk Control","ISO Integration"] },
+  { id:21, cat:"Models", title:"ISO 14001 Environmental Management", origin:"ISO, 1996 (revised 2015)", complexity:"Intermediate", desc:"An international standard for environmental management systems enabling organisations to manage their environmental responsibilities.", what:"ISO 14001 provides requirements for an environmental management system. It helps organisations improve environmental performance, fulfil compliance obligations, and achieve environmental objectives.", how:"Conduct an environmental aspects and impacts assessment, set environmental objectives, implement operational controls, and certify through an accredited certification body.", benefits:"Reduces environmental impact, achieves cost savings through resource efficiency, meets regulatory requirements, and strengthens stakeholder trust.", tags:["EMS","Environmental","Sustainability","ISO"] },
+  { id:22, cat:"Models", title:"Business Excellence Maturity Model", origin:"Various — BQF, SPRING Singapore", complexity:"Advanced", desc:"A staged maturity framework helping organisations understand their current excellence level and plan their improvement journey.", what:"Business Excellence Maturity Models define progression stages from reactive to proactive to world-class performance. They provide assessment criteria at each stage to guide organisations on their improvement pathway.", how:"Conduct a structured self-assessment against maturity descriptors, identify the current maturity level across enablers and results, and build a roadmap to progress to the next maturity level.", benefits:"Gives a realistic picture of organisational maturity, provides a clear improvement roadmap, and enables year-on-year tracking of progress.", tags:["Maturity Assessment","Roadmap","Staged Progress","Self-Assessment"] },
+  { id:23, cat:"Models", title:"ISO 56002 Innovation Management System", origin:"ISO, 2019", complexity:"Advanced", desc:"A guidance standard for establishing, implementing, and improving an innovation management system within organisations.", what:"ISO 56002 provides guidance (not requirements) for an innovation management system. It covers context, leadership, planning, support, operation, performance evaluation, and improvement for innovation.", how:"Use ISO 56002 as a reference to build your innovation management system. Establish an innovation policy, create innovation portfolios, manage ideas systematically, and measure innovation outcomes.", benefits:"Embeds systematic innovation capability, aligns innovation with strategy, improves the success rate of new initiatives, and builds innovation culture.", tags:["Innovation System","ISO 56000 Family","Portfolio Management","Innovation Culture"] },
+  { id:24, cat:"Models", title:"Australian Business Excellence Framework", origin:"SAI Global / Business Excellence Australia", complexity:"Advanced", desc:"Australia's national framework for organisational excellence based on seven interconnected categories of management.", what:"The ABEF provides a systems perspective for understanding organisational performance. Its seven categories — Leadership, Strategy & Planning, Data, Information & Knowledge, People, Customer & Market Focus, Process Management, and Results — are interdependent.", how:"Use the ABEF for self-assessment, benchmarking against Australian Excellence Award criteria, and building a strategic improvement plan aligned to the framework's seven categories.", benefits:"Provides a nationally recognised framework for excellence, enables external benchmarking, and drives integrated organisational improvement.", tags:["Australia","National Framework","Systems Thinking","Seven Categories"] },
+  { id:25, cat:"Models", title:"Global Excellence Model (GEM)", origin:"International Academy for Quality (IAQ)", complexity:"Advanced", desc:"A convergence model comparing EFQM, Baldrige, Deming, and other national excellence frameworks to identify universal excellence principles.", what:"The GEM framework analyses commonalities across major national and international excellence models to identify universal elements. It provides a meta-model for organisations operating globally across multiple frameworks.", how:"Use GEM to harmonise your excellence approach when operating in multiple countries with different national frameworks. Map your current practices against GEM elements and identify universal gaps.", benefits:"Reduces complexity for multinational organisations, identifies universal excellence practices, and enables cross-framework benchmarking.", tags:["International","Benchmarking","Convergence","IAQ"] },
+
+  // ─── TOOLS & FRAMEWORKS (25) ───
+  { id:26, cat:"Tools", title:"Value Stream Mapping (VSM)", origin:"Toyota, Lean Enterprise Institute", complexity:"Intermediate", desc:"A visual tool to map, analyse, and design the flow of materials and information required to deliver value to the customer.", what:"VSM is a pencil-and-paper tool that maps every step in a value stream — from raw material to customer delivery. It shows both current state waste and the ideal future state, making it a powerful planning tool for lean transformation.", how:"Form a cross-functional team, walk the actual value stream, map the current state with standard VSM icons, calculate lead time and process time, design the future state, and build an implementation plan.", benefits:"Makes waste visible, aligns teams on improvement priorities, reduces lead time, and provides a blueprint for lean transformation.", tags:["Lean","Flow","Waste","Takt Time"] },
+  { id:27, cat:"Tools", title:"5S Workplace Organisation", origin:"Japan, Toyota Production System", complexity:"Beginner", desc:"A systematic method for organising and maintaining a productive, clean, and efficient workplace: Sort, Set, Shine, Standardise, Sustain.", what:"5S is a foundational lean tool for creating and maintaining an organised workplace. Each S builds on the previous: Sort (eliminate unnecessary items), Set in Order (organise), Shine (clean), Standardise (create standards), Sustain (maintain discipline).", how:"Run 5S workshops by area. Use red-tag events for Sort, create visual standards for Set, establish cleaning schedules for Shine, document standards, and conduct regular 5S audits to Sustain.", benefits:"Improves safety, reduces search time, increases quality through visual management, and creates the discipline foundation for further lean improvements.", tags:["Workplace", "Visual Management","Lean Foundation","Standards"] },
+  { id:28, cat:"Tools", title:"Root Cause Analysis (RCA)", origin:"Quality Engineering — widely attributed", complexity:"Intermediate", desc:"A structured method for identifying the underlying causes of problems to prevent recurrence rather than treating symptoms.", what:"RCA is the process of discovering the root causes of problems to identify appropriate solutions. It distinguishes between the root cause (the fundamental reason), contributing causes, and the symptom.", how:"Use RCA tools such as 5 Whys, Fishbone Diagram, Fault Tree Analysis, or 8D. Verify the root cause with data, implement countermeasures, and validate their effectiveness.", benefits:"Prevents recurrence of problems, eliminates fire-fighting culture, reduces cost of poor quality, and builds systematic problem-solving capability.", tags:["5 Whys","Fishbone","8D","Problem Solving"] },
+  { id:29, cat:"Tools", title:"Failure Mode & Effects Analysis (FMEA)", origin:"US Military, 1949 — MIL-P-1629", complexity:"Advanced", desc:"A systematic method for identifying potential failure modes, their causes and effects, and prioritising them by risk priority number.", what:"FMEA is a proactive risk assessment tool used to identify how a product or process might fail (Failure Mode), the effect of each failure (Effect), and the cause (Cause). The Risk Priority Number (RPN) = Severity × Occurrence × Detection.", how:"Assemble a cross-functional team, list all process steps or product functions, identify failure modes for each, score severity, occurrence, and detection (1–10), calculate RPN, and act on high-RPN items.", benefits:"Prevents failures before they occur, reduces warranty costs, improves product reliability, and satisfies customer and regulatory requirements.", tags:["DFMEA","PFMEA","RPN","Risk Prevention"] },
+  { id:30, cat:"Tools", title:"Statistical Process Control (SPC)", origin:"Walter Shewhart, Bell Labs, 1920s", complexity:"Advanced", desc:"The use of statistical methods to monitor and control a process to ensure it operates at its full potential.", what:"SPC uses control charts to distinguish between common cause variation (inherent to the process) and special cause variation (due to assignable causes). It enables real-time process monitoring and early warning of process changes.", how:"Select critical process characteristics, determine appropriate control chart type (X-bar R, IMR, p-chart etc.), collect data, plot on control charts, interpret signals, and investigate special causes immediately.", benefits:"Reduces process variation, prevents defects, provides early warning of process changes, and creates a data-driven quality culture.", tags:["Control Charts","Shewhart","Variation","Process Capability"] },
+  { id:31, cat:"Tools", title:"Design of Experiments (DOE)", origin:"Ronald Fisher, 1920s — Statistics", complexity:"Advanced", desc:"A systematic approach to planning, conducting, analysing, and interpreting controlled tests to evaluate factors affecting a process or product.", what:"DOE is a powerful statistical tool for understanding the relationship between input factors (Xs) and output responses (Ys). It allows simultaneous testing of multiple factors in a structured, efficient way.", how:"Define the objective and response variable, select factors and levels, choose an appropriate design (Full Factorial, Fractional Factorial, Response Surface), run the experiment, analyse results with ANOVA, and confirm optimal settings.", benefits:"Identifies key process drivers efficiently, optimises product and process performance, reduces the number of experiments needed, and separates main effects from interactions.", tags:["Full Factorial","Taguchi","Response Surface","ANOVA"] },
+  { id:32, cat:"Tools", title:"Quality Function Deployment (QFD)", origin:"Yoji Akao, Japan, 1966", complexity:"Advanced", desc:"A structured method to translate customer requirements (Voice of Customer) into engineering and production requirements.", what:"QFD uses the House of Quality matrix to translate what the customer wants (WHATs) into how the product will be designed and made (HOWs). It ensures customer needs drive the design process from concept to manufacture.", how:"Gather VOC data, translate to quality characteristics, build the House of Quality matrix, identify engineering parameters, establish technical targets, and cascade through product and process design phases.", benefits:"Reduces design changes, improves customer satisfaction, shortens development cycles, and creates shared understanding between functions.", tags:["House of Quality","VOC","Voice of Customer","Product Design"] },
+  { id:33, cat:"Tools", title:"Kaizen Events (Rapid Improvement)", origin:"Masaaki Imai, Japan, 1986", complexity:"Intermediate", desc:"Focused 3–5 day improvement workshops that rapidly implement changes in a specific process area using a cross-functional team.", what:"Kaizen (change for the better) events concentrate the skills of a cross-functional team on a specific process improvement over a short, intense period. They combine problem analysis, solution design, and immediate implementation.", how:"Select a high-priority process area, assemble a diverse team, run the event (Day 1: understand current state; Days 2-3: design and implement improvements; Day 4-5: test, standardise, and present results).", benefits:"Delivers rapid, tangible results, builds team capability, energises improvement culture, and creates immediate buy-in through participation.", tags:["Lean","Rapid Improvement","Cross-Functional","Gemba"] },
+  { id:34, cat:"Tools", title:"8D Problem Solving", origin:"Ford Motor Company, 1980s", complexity:"Intermediate", desc:"A structured 8-discipline methodology for root cause analysis and corrective action, widely used in automotive and manufacturing.", what:"8D defines eight disciplines for problem solving: D1 Team formation, D2 Problem description, D3 Interim containment, D4 Root cause, D5 Corrective actions, D6 Implementation, D7 Prevention, D8 Recognition.", how:"Follow the 8D steps sequentially. Use tools like 5 Whys and fishbone for D4, implement containment actions at D3 to protect customers, and validate effectiveness at D6 before closing the 8D report.", benefits:"Provides a thorough, documented problem-solving approach, prevents recurrence, satisfies customer corrective action requirements, and builds organisational problem-solving capability.", tags:["Ford","Automotive","Corrective Action","CAPA"] },
+  { id:35, cat:"Tools", title:"Benchmarking", origin:"Xerox Corporation, 1979", complexity:"Intermediate", desc:"The systematic process of comparing an organisation's practices and performance against best-in-class organisations.", what:"Benchmarking is the practice of continuously comparing and measuring an organisation against business leaders anywhere in the world to gain information that will help the organisation take action to improve its performance.", how:"Define what to benchmark, identify benchmark partners, collect data through surveys or site visits, analyse gaps, adapt best practices to your context, and implement improvements.", benefits:"Identifies performance gaps, stimulates breakthrough thinking, accelerates learning, and sets performance targets based on what is actually achievable.", tags:["Best Practice","Competitive Analysis","Learning","Gap Analysis"] },
+  { id:36, cat:"Tools", title:"Poka-Yoke (Error Proofing)", origin:"Shigeo Shingo, Toyota, 1960s", complexity:"Intermediate", desc:"Design features or techniques that prevent errors from occurring or make errors immediately obvious when they do occur.", what:"Poka-yoke (mistake-proofing) devices and methods eliminate the possibility of errors or make defects instantly detectable. They can be prevention-type (prevent errors) or detection-type (detect errors immediately).", how:"Identify error-prone process steps using FMEA or incident data, analyse the error mechanism, design a poka-yoke device or method (physical, electrical, software), implement, and verify effectiveness.", benefits:"Eliminates human error, reduces inspection costs, improves quality at the source, and increases process reliability.", tags:["Error Proofing","Shingo","Zero Defects","Process Design"] },
+  { id:37, cat:"Tools", title:"Control Plan", origin:"AIAG — Automotive Industry Action Group", complexity:"Intermediate", desc:"A document that describes the controls required to ensure process outputs meet customer requirements.", what:"A Control Plan is a living document that describes the actions required at each phase of a process — including the process steps, product characteristics, control methods, sample size, frequency, and reaction plan if a characteristic goes out of control.", how:"Develop control plans aligned to the FMEA. Identify critical control characteristics, define control methods (SPC, attribute inspection, mistake-proofing), specify sampling plans, and establish reaction plans.", benefits:"Ensures critical characteristics are controlled, provides a single reference for operators and quality engineers, and reduces process variation at key steps.", tags:["APQP","Automotive","AIAG","Process Control"] },
+  { id:38, cat:"Tools", title:"Measurement System Analysis (MSA)", origin:"AIAG — Automotive Industry Action Group", complexity:"Advanced", desc:"A collection of methods to evaluate the adequacy of a measurement system used in process or product quality control.", what:"MSA evaluates the measurement system's accuracy, repeatability, reproducibility, stability, and linearity. The most common MSA is Gauge R&R (Repeatability and Reproducibility) which quantifies variation due to the measurement system vs. the process.", how:"Conduct a Gauge R&R study with multiple operators measuring the same parts multiple times. Use statistical software to partition variation, interpret % Gauge R&R, and take action if measurement system variation is excessive.", benefits:"Ensures data quality, prevents making wrong decisions based on poor measurement, validates process capability studies, and improves confidence in quality control data.", tags:["Gauge R&R","Accuracy","Repeatability","Measurement Capability"] },
+  { id:39, cat:"Tools", title:"Process Capability Analysis", origin:"Quality Engineering — Walter Shewhart era", complexity:"Advanced", desc:"Statistical measures (Cp, Cpk, Pp, Ppk) that quantify how well a process can produce output within specification limits.", what:"Process capability indices measure the relationship between process variation and specification limits. Cp measures potential capability (spread vs. tolerance), Cpk accounts for both spread and centring. Values ≥1.33 are generally considered capable.", how:"Ensure the process is in statistical control first (use SPC). Collect at least 30 data points, test for normality, calculate capability indices, and interpret — then improve centring or reduce variation as needed.", benefits:"Quantifies process performance, identifies processes needing improvement, supports customer discussions, and enables comparison of processes.", tags:["Cp","Cpk","Sigma Level","Specification"] },
+  { id:40, cat:"Tools", title:"Failure Tree Analysis (FTA)", origin:"Bell Telephone Laboratories, 1962", complexity:"Advanced", desc:"A top-down, deductive failure analysis that identifies causes of a system failure using a logical tree of events.", what:"FTA starts with a defined undesired event (the 'top event') and systematically identifies all the possible causes using AND/OR gate logic to build a tree. It is used in safety-critical systems to understand failure pathways.", how:"Define the top undesired event, decompose it using fault tree logic (AND/OR gates), identify basic events, calculate minimal cut sets, and prioritise prevention measures based on probability and criticality.", benefits:"Identifies critical failure pathways, supports safety case development, enables quantitative risk assessment, and drives preventive design changes.", tags:["Safety Analysis","Top Event","Logic Gates","Risk"] },
+  { id:41, cat:"Tools", title:"Affinity Diagram (KJ Method)", origin:"Jiro Kawakita (KJ), Japan, 1960s", complexity:"Beginner", desc:"A tool for organising large amounts of qualitative data or ideas into meaningful groups based on natural affinity.", what:"The Affinity Diagram organises ideas, data, or issues into groups based on their natural relationships. It is particularly useful when dealing with large volumes of unstructured information from brainstorming or customer research.", how:"Generate ideas on cards or sticky notes (one idea per note), silently sort them into groups based on affinity, create header cards for each group, discuss relationships, and use the diagram to drive prioritisation.", benefits:"Organises complex, ambiguous information, builds consensus, reveals hidden patterns in data, and enables teams to move from confusion to clarity.", tags:["KJ Method","Brainstorming","Grouping","Creative Thinking"] },
+  { id:42, cat:"Tools", title:"Interrelationship Digraph", origin:"Seven Management & Planning Tools — JUSE", complexity:"Intermediate", desc:"A tool to identify and map the cause-and-effect relationships among complex, inter-related issues or factors.", what:"The Interrelationship Digraph (ID) maps causal relationships among a set of factors by asking: 'Does this factor cause or influence that factor?' Factors with the most outgoing arrows are drivers; those with most incoming arrows are outcomes.", how:"List all relevant factors, systematically compare each pair, draw arrows showing causal direction, count incoming and outgoing arrows for each factor, and identify key drivers and key outcomes.", benefits:"Reveals root drivers hidden beneath obvious symptoms, prevents sub-optimisation by clarifying interdependencies, and guides where to focus improvement effort.", tags:["Seven QC Tools","Causality","Complexity","Planning"] },
+  { id:43, cat:"Tools", title:"Theory of Inventive Problem Solving (TRIZ)", origin:"Genrich Altshuller, USSR, 1946", complexity:"Advanced", desc:"A systematic innovation methodology based on patterns of invention extracted from hundreds of thousands of patents.", what:"TRIZ (from Russian: Teoriya Resheniya Izobretatelskikh Zadach) identifies and uses patterns of invention to solve contradictions. Its 40 Inventive Principles, Contradiction Matrix, and ARIZ algorithm guide inventors to breakthrough solutions.", how:"Define the technical or physical contradiction in your problem, use the Contradiction Matrix to identify relevant Inventive Principles, generate solution concepts, and evaluate against system requirements.", benefits:"Breaks psychological inertia, generates non-obvious solutions, reduces time to innovation, and provides a systematic alternative to trial-and-error.", tags:["Innovation","Contradiction","40 Principles","Inventive"] },
+  { id:44, cat:"Tools", title:"A3 Problem Solving", origin:"Toyota Motor Corporation", complexity:"Intermediate", desc:"A structured problem-solving and reporting method that fits the entire story on a single A3-size paper.", what:"A3 Problem Solving (named after the paper size) is a structured thinking process that documents a problem on a single page: background, current condition, root cause analysis, target condition, countermeasures, implementation plan, and follow-up.", how:"Mentor-led: Work with a coach (sensei) to develop A3 thinking. Start with understanding the current condition deeply (genchi genbutsu), conduct 5 Whys, design countermeasures, and review regularly.", benefits:"Develops deep problem-solving thinking, creates shared understanding, builds coaching relationships, and documents learning concisely.", tags:["Toyota","Lean","Mentoring","Single Page"] },
+  { id:45, cat:"Tools", title:"VOC — Voice of Customer", origin:"Marketing & Quality Engineering", complexity:"Intermediate", desc:"A research process for capturing customers' expectations, preferences, and aversions — translated into actionable requirements.", what:"VOC is the process of capturing customer statements about their needs and wants. It involves gathering direct and indirect customer input through interviews, surveys, complaints, and observation, then translating it into specific, actionable requirements.", how:"Use multiple VOC capture methods (interviews, surveys, focus groups, complaint analysis, social listening). Organise VOC data using affinity diagrams, translate to CTQs (Critical to Quality), and use QFD to deploy into designs.", benefits:"Ensures products and services meet real customer needs, reduces the risk of design failures, and aligns the organisation around the customer.", tags:["CTQ","QFD","Customer Needs","Requirements"] },
+  { id:46, cat:"Tools", title:"Kano Model", origin:"Prof. Noriaki Kano, Tokyo University, 1984", complexity:"Intermediate", desc:"A model for classifying customer requirements into basic needs, performance needs, and excitement needs (delighters).", what:"The Kano Model categorises product and service attributes into: Must-Be (basic needs expected but not expressed), One-Dimensional (more = better satisfaction), Attractive (delighters that exceed expectations), Indifferent, and Reverse.", how:"Conduct a Kano survey with functional and dysfunctional question pairs for each product/service attribute. Map responses to Kano categories, prioritise 'Must-Be' for compliance and 'Attractive' for differentiation.", benefits:"Prioritises features by customer impact, prevents investment in attributes that don't drive satisfaction, and identifies innovation opportunities.", tags:["Customer Satisfaction","Delighters","Product Design","VOC"] },
+  { id:47, cat:"Tools", title:"Gemba Walk", origin:"Toyota — Taiichi Ohno", complexity:"Beginner", desc:"A leadership practice of going to the actual workplace to observe, understand, and improve processes where value is created.", what:"Gemba (Japanese: 'the real place') walks involve leaders physically going to where work happens to see processes firsthand, talk to employees, and identify waste, problems, and improvement opportunities — not managing from the office.", how:"Schedule regular Gemba walks with a specific focus (safety, quality, delivery, cost, or morale). Observe without blaming, ask open questions, listen to employees, make notes, and follow up on issues raised.", benefits:"Builds deep process understanding, improves leader-employee communication, identifies real problems vs. reported problems, and demonstrates commitment to improvement.", tags:["Lean Leadership","Observation","Continuous Improvement","Go and See"] },
+  { id:48, cat:"Tools", title:"Hoshin X-Matrix", origin:"Hoshin Kanri / Toyota", complexity:"Advanced", desc:"A single-page strategic deployment tool that shows the linkage between breakthrough objectives, annual goals, improvement priorities, and metrics.", what:"The X-Matrix is the core tool of Hoshin Kanri strategy deployment. Its four quadrants (read clockwise) show: Breakthrough Goals (3–5 year), Annual Objectives, Improvement Priorities, and Metrics — with correlation matrices showing how they connect.", how:"Starting with the leadership team, define breakthrough goals, cascade to annual objectives, identify key improvement priorities, assign accountabilities, and use the X-Matrix as the basis for monthly review and catchball.", benefits:"Creates strategic alignment from vision to daily work, shows connectivity between plans and metrics, and enables meaningful strategy review conversations.", tags:["Strategy","Hoshin Kanri","Deployment","Alignment"] },
+  { id:49, cat:"Tools", title:"Mistake-Proofing Audit", origin:"Quality Assurance / Lean Quality", complexity:"Intermediate", desc:"A structured audit process to verify that error-proofing devices are functioning correctly and providing the intended protection.", what:"Mistake-Proofing Audits systematically check that all poka-yoke devices at each process step are functioning as designed. Unlike product quality audits, they verify the adequacy of the error prevention system itself.", how:"Create an audit checklist of all poka-yoke devices by process area. Conduct regular audits, test each device against its specification, record findings, and take immediate corrective action for failed devices.", benefits:"Sustains the integrity of error-proofing investments, prevents regression, and maintains zero-defect capability over time.", tags:["Poka-Yoke","Audit","Sustaining","Quality Assurance"] },
+  { id:50, cat:"Tools", title:"Advanced Product Quality Planning (APQP)", origin:"AIAG — Automotive Industry Action Group, 1994", complexity:"Advanced", desc:"A structured framework used in the automotive industry for defining and executing the steps required to develop a product that satisfies customers.", what:"APQP is a five-phase structured approach (Planning, Product Design & Development, Process Design & Development, Product & Process Validation, Production Launch) used to ensure a quality product is developed on time for the customer.", how:"Follow APQP timelines, complete all required outputs at each phase gate (DFMEA, PFMEA, Control Plan, MSA, Process Capability), conduct gate reviews with the customer, and submit the PPAP (Production Part Approval Process) package.", benefits:"Reduces launch risk, ensures all quality planning is completed before production, aligns supplier and customer quality expectations, and satisfies TS/IATF requirements.", tags:["Automotive","PPAP","IATF 16949","Phase Gate"] },
+
+  // ─── CULTURE & LEADERSHIP (25) ───
+  { id:51, cat:"Culture", title:"Excellence Culture Framework", origin:"EFQM / Shingo / Organisational Psychology", complexity:"Intermediate", desc:"A holistic approach to building and sustaining a culture where excellence, improvement, and innovation are the natural way of working.", what:"An Excellence Culture Framework defines the values, behaviours, systems, and structures needed for excellence to thrive. It recognises that tools and processes alone do not sustain excellence — the culture must reward, model, and reinforce excellent behaviours.", how:"Assess current culture using validated tools (cultural surveys, behavioural observation). Define desired culture in behavioural terms, align management systems to reinforce desired behaviours, and invest in leadership development.", benefits:"Creates sustainable excellence beyond tool implementation, retains talent, improves engagement, and delivers superior long-term results.", tags:["Culture","Values","Behaviours","Sustainability"] },
+  { id:52, cat:"Culture", title:"Servant Leadership", origin:"Robert Greenleaf, 1970", complexity:"Intermediate", desc:"A leadership philosophy where the leader's primary goal is to serve others — empowering people to perform at their best.", what:"Servant Leadership inverts the traditional leadership hierarchy. The servant leader focuses first on the needs of team members — removing obstacles, developing capability, and creating the conditions for others to do their best work.", how:"Practice active listening in every interaction, focus on removing barriers that slow your team, invest in team members' development, and measure your leadership effectiveness through the team's performance and wellbeing.", benefits:"Builds high-trust teams, improves employee engagement, develops future leaders, and creates the psychological safety needed for innovation and improvement.", tags:["Leadership","Trust","Empowerment","Greenleaf"] },
+  { id:53, cat:"Culture", title:"Psychological Safety", origin:"Amy Edmondson, Harvard Business School, 1999", complexity:"Intermediate", desc:"A shared belief that it is safe to speak up, take risks, share ideas, and report problems without fear of punishment.", what:"Psychological Safety is a team climate in which people feel safe to take interpersonal risks — raising concerns, sharing bad news, questioning assumptions, and suggesting ideas. It is the single strongest predictor of team learning and performance.", how:"Leaders build psychological safety by being curious (not critical), responding positively to failure and bad news, modelling vulnerability, rewarding speaking up, and creating regular forums for open discussion.", benefits:"Unlocks innovation, accelerates learning from failure, improves quality by enabling early problem reporting, and is the foundation of high-performing teams.", tags:["Team Performance","Amy Edmondson","Google Project Aristotle","Safety"] },
+  { id:54, cat:"Culture", title:"Continuous Learning Organisation", origin:"Peter Senge — The Fifth Discipline, 1990", complexity:"Intermediate", desc:"An organisation skilled at creating, acquiring, and transferring knowledge — and at modifying its behaviour to reflect new knowledge.", what:"A Learning Organisation is one that continuously transforms itself by learning from experience, sharing knowledge, and adapting its behaviour. Senge's Five Disciplines — Personal Mastery, Mental Models, Shared Vision, Team Learning, Systems Thinking — provide the framework.", how:"Build systems for capturing and sharing learning, conduct blameless post-mortems after failures, invest in personal development at all levels, and create a shared vision that inspires genuine engagement.", benefits:"Improves adaptability, reduces repeated mistakes, accelerates improvement, and creates competitive advantage through organisational knowledge.", tags:["Peter Senge","Fifth Discipline","Systems Thinking","Learning"] },
+  { id:55, cat:"Culture", title:"Visible Leadership in Excellence", origin:"EFQM / Lean Leadership Models", complexity:"Intermediate", desc:"Leadership behaviours that make the commitment to excellence visible, credible, and consistent through daily actions.", what:"Visible Leadership means leaders demonstrating their commitment to excellence through their daily behaviours — attending improvement events, conducting Gemba walks, coaching teams on problems, and recognising excellent work publicly.", how:"Schedule regular leadership standard work (Gemba walks, team reviews, improvement coaching). Publish leadership improvement commitments visibly. Respond personally to quality issues and celebrate improvement wins.", benefits:"Creates alignment between stated values and actual leadership behaviour, builds credibility, motivates teams, and signals the importance of excellence to the whole organisation.", tags:["Leadership Behaviour","Standard Work","Gemba","Role Modelling"] },
+  { id:56, cat:"Culture", title:"Purpose-Driven Excellence", origin:"Simon Sinek — Start With Why, 2009", complexity:"Beginner", desc:"Aligning excellence effort with a compelling organisational purpose that gives meaning to improvement work.", what:"Purpose-Driven Excellence connects the 'what' and 'how' of improvement to the deeper 'why' — the organisation's reason for existing beyond profit. When people understand why excellence matters in the context of purpose, engagement is dramatically higher.", how:"Articulate a clear, authentic organisational purpose. Connect every major improvement initiative to the purpose narrative. Use storytelling to show how quality and excellence work serves customers and society.", benefits:"Increases intrinsic motivation for improvement, reduces change resistance, attracts talent aligned to values, and sustains improvement effort through difficulties.", tags:["Simon Sinek","Why","Motivation","Values"] },
+  { id:57, cat:"Culture", title:"Coaching for Excellence", origin:"John Whitmore — GROW Model, 1992", complexity:"Intermediate", desc:"A leadership approach that uses coaching conversations to develop employees' capability and commitment to excellence.", what:"Coaching for Excellence uses structured coaching methodologies (GROW, OSKAR, FUEL) to help individuals develop their problem-solving skills, improvement capability, and ownership of excellence — rather than receiving instructions.", how:"Train leaders in coaching skills. Replace instruction with questions in improvement conversations. Use the GROW model (Goal, Reality, Options, Will) to structure coaching sessions on problems and improvement opportunities.", benefits:"Develops a self-sufficient improvement culture, builds lasting capability rather than dependency, improves engagement, and multiplies the leader's impact.", tags:["GROW Model","Development","Leadership","Toyota Kata"] },
+  { id:58, cat:"Culture", title:"Toyota Kata", origin:"Mike Rother — Toyota Kata, 2009", complexity:"Advanced", desc:"A scientific pattern for moving from current state to a target condition through daily coaching cycles, building continuous improvement habits.", what:"Toyota Kata consists of two core patterns: the Improvement Kata (a four-step scientific thinking pattern for improvement) and the Coaching Kata (a five-question daily coaching cycle). Together they develop systematic improvement thinking as a habit.", how:"Train coaches on the Coaching Kata five questions. Practice the Improvement Kata daily with teams — define the direction, grasp the current condition, establish the next target condition, and run PDCA experiments toward it.", benefits:"Builds improvement as a daily habit rather than a project, develops scientific thinking capability at all levels, and sustains continuous improvement beyond initial enthusiasm.", tags:["Scientific Thinking","Coaching","PDCA","Habit Formation"] },
+  { id:59, cat:"Culture", title:"Recognition & Reward Systems", origin:"Organisational Behaviour & HR Management", complexity:"Intermediate", desc:"Structured systems for recognising and rewarding excellence behaviours, improvement contributions, and quality achievements.", what:"Recognition and Reward Systems aligned to excellence reinforce the behaviours the organisation wants to see more of. They include formal awards, peer recognition, leader acknowledgements, and team celebrations tied to excellence values.", how:"Design a multi-level recognition system (immediate verbal recognition, peer programmes, formal awards). Ensure recognition criteria are clearly linked to excellence behaviours. Make recognition frequent, specific, and public.", benefits:"Reinforces excellence culture, motivates improvement effort, reduces turnover, and signals organisational values through what gets celebrated.", tags:["Motivation","Engagement","Reinforcement","Culture"] },
+  { id:60, cat:"Culture", title:"Cross-Functional Team Excellence", origin:"Quality Management & Organisational Design", complexity:"Intermediate", desc:"Building high-performing cross-functional teams that drive excellence across traditional departmental boundaries.", what:"Cross-functional teams bring together people with different skills and perspectives to solve complex quality and excellence challenges that span multiple departments. They are the engine of breakthrough improvement.", how:"Establish clear team charters with purpose, goals, and authority. Select team members for diversity of skills and perspectives. Use structured facilitation for team working sessions. Measure and reward team (not just individual) performance.", benefits:"Breaks down silos, solves complex multi-function problems, creates shared ownership of quality, and accelerates improvement learning.", tags:["Teamwork","Collaboration","Silos","Cross-Function"] },
+  { id:61, cat:"Culture", title:"Change Management for Excellence", origin:"John Kotter — 8-Step Model, 1996", complexity:"Advanced", desc:"Structured approaches for leading organisational change to embed excellence, quality, and continuous improvement sustainably.", what:"Change Management for Excellence applies proven change models (Kotter's 8 Steps, Prosci ADKAR, McKinsey 7-S) to the challenge of embedding quality and excellence culture. It addresses resistance, builds a coalition, and sustains new ways of working.", how:"Follow Kotter's 8 steps: create urgency, build a guiding coalition, form a strategic vision, enlist volunteers, enable action by removing barriers, generate short-term wins, sustain acceleration, and institute change.", benefits:"Dramatically improves the success rate of excellence transformation, reduces resistance, builds lasting change, and avoids the 'initiative of the month' trap.", tags:["Kotter","ADKAR","Transformation","Resistance"] },
+  { id:62, cat:"Culture", title:"Employee Suggestion Systems", origin:"Toyota — Teian System / Kaizen", complexity:"Beginner", desc:"Formal systems that capture, evaluate, implement, and recognise employee suggestions for process improvement.", what:"Employee Suggestion Systems (Teian in Japanese) systematically channel the ideas of every employee into improvement actions. The best systems respond quickly to suggestions, implement a high percentage, and recognise contributors publicly.", how:"Design a simple, accessible submission process (digital or physical). Establish a fast review and feedback loop (target: respond within 5 days). Track implementation rates and cost savings. Celebrate milestones publicly.", benefits:"Engages every employee in improvement, captures frontline knowledge, generates significant cost savings, and builds a culture of continuous improvement.", tags:["Ideas","Engagement","Teian","Innovation"] },
+  { id:63, cat:"Culture", title:"Leader Standard Work", origin:"Lean Leadership — Lean Enterprise Institute", complexity:"Intermediate", desc:"A defined set of daily and weekly leadership activities that support process discipline, problem solving, and improvement.", what:"Leader Standard Work defines the regular, structured activities that leaders at each level perform to support the management system — including Gemba walks, tier board reviews, coaching interactions, and improvement follow-ups. It makes leadership behaviour consistent and accountable.", how:"Define standard work for each leadership level. Schedule standard work into the calendar. Audit adherence to leader standard work in the same way you audit process adherence. Iterate and improve the standard work itself.", benefits:"Creates consistent leadership behaviour, prevents drift from standards, enables coaching of leaders, and sustains the management system during leadership changes.", tags:["Standard Work","Leadership","Consistency","Accountability"] },
+  { id:64, cat:"Culture", title:"Tiered Daily Management System", origin:"Lean Management / Operational Excellence", complexity:"Intermediate", desc:"A cascaded visual management system with daily stand-up meetings at multiple levels to surface, escalate, and resolve problems.", what:"A Tiered Daily Management System (TDMS) consists of structured, short stand-up meetings (typically 10–15 minutes) at Tier 1 (team), Tier 2 (department), and Tier 3 (site) levels, supported by visual management boards showing performance against targets.", how:"Design visual management boards for each tier with key metrics (Safety, Quality, Delivery, Cost, People). Define escalation criteria between tiers. Train all leaders on facilitation. Hold meetings at the boards, not in conference rooms.", benefits:"Surfaces and resolves problems at the right level, creates a performance-driven culture, connects frontline teams to strategic goals, and enables rapid response to exceptions.", tags:["Visual Management","Daily Huddle","Escalation","Operational Excellence"] },
+  { id:65, cat:"Culture", title:"Emotional Intelligence in Quality Leadership", origin:"Daniel Goleman, 1995", complexity:"Intermediate", desc:"The application of emotional intelligence competencies — self-awareness, empathy, and relationship management — to quality and excellence leadership.", what:"Emotional Intelligence (EQ) in quality leadership recognises that the ability to understand and manage emotions (self and others) is essential for building the trust, psychological safety, and collaboration that excellent organisations require.", how:"Develop self-awareness through 360° feedback and coaching. Practice active listening and empathy in every difficult quality conversation. Build emotional regulation to respond rather than react to quality failures.", benefits:"Builds higher-trust teams, improves communication in difficult conversations about quality problems, reduces conflict, and creates the foundation for psychological safety.", tags:["EQ","Goleman","Self-Awareness","Empathy"] },
+  { id:66, cat:"Culture", title:"Innovation Culture Building", origin:"Design Thinking / Lean Startup / Google X", complexity:"Advanced", desc:"Creating the conditions, behaviours, and systems that enable innovation to flourish consistently across an organisation.", what:"An Innovation Culture is one where experimentation, learning from failure, challenging assumptions, and customer-focused creativity are actively encouraged and rewarded. It requires deliberate design of systems, spaces, and leadership behaviours.", how:"Establish psychological safety as the foundation. Create innovation time (Google's 20%, 3M's 15% rule). Run design thinking sprints. Celebrate intelligent failures. Make innovation a visible leadership priority.", benefits:"Generates competitive differentiation, attracts innovative talent, creates new value streams, and builds organisational resilience through constant renewal.", tags:["Design Thinking","Experimentation","Failure","Creativity"] },
+  { id:67, cat:"Culture", title:"Quality Circles", origin:"Kaoru Ishikawa, Japan, 1962", complexity:"Beginner", desc:"Small groups of frontline employees who meet regularly to identify, analyse, and solve quality and work-related problems.", what:"Quality Circles are voluntary groups of 4–10 employees from the same work area who meet regularly (typically weekly) to identify problems, analyse root causes using quality tools, and recommend solutions to management.", how:"Train circle leaders in quality tools (7 QC Tools, problem solving). Provide time and management support. Establish a presentation forum for circles to share findings. Recognise and implement winning solutions.", benefits:"Engages frontline employees in quality, develops problem-solving skills at the source, generates significant improvements, and builds ownership of quality.", tags:["Ishikawa","Frontline","Problem Solving","Engagement"] },
+  { id:68, cat:"Culture", title:"Respect for People (Lean Principle)", origin:"Toyota Way — Taiichi Ohno & Fujio Cho", complexity:"Beginner", desc:"The foundational Toyota Way principle that treats people as the most important asset — developing their capability and engaging their minds.", what:"Respect for People is one of two pillars of the Toyota Way (the other being Continuous Improvement). It manifests in developing employees' skills, trusting them with problem solving, ensuring safe working conditions, and engaging their wisdom in improvement.", how:"Involve frontline employees in improvement decisions. Provide development opportunities at every level. Eliminate waste that frustrates people's ability to do quality work. Listen to suggestions seriously and respond promptly.", benefits:"Creates discretionary effort, builds loyalty, engages the full creative capacity of the workforce, and sustains improvement culture over the long term.", tags:["Toyota Way","People Development","Lean","Dignity"] },
+  { id:69, cat:"Culture", title:"Resilience & Excellence Under Pressure", origin:"Organisational Resilience / High Reliability Organisations", complexity:"Intermediate", desc:"Building organisational capability to maintain excellence standards and continue improvement even under stress, disruption, or crisis.", what:"Resilient Excellence organisations maintain their quality and improvement disciplines during disruption — supply chain crises, leadership changes, market downturns — because the culture is deeply embedded rather than superficially imposed.", how:"Build psychological resilience in leaders through coaching. Stress-test your management system with scenario exercises. Ensure quality systems are simple enough to sustain under pressure. Build redundancy in key excellence roles.", benefits:"Protects quality performance during disruption, maintains customer trust through crises, and demonstrates the depth of excellence culture.", tags:["Resilience","HRO","Crisis","Sustainability"] },
+  { id:70, cat:"Culture", title:"Diversity, Equity & Inclusion in Excellence", origin:"HR / D&I / Organisational Behaviour", complexity:"Intermediate", desc:"Integrating diversity, equity, and inclusion principles into excellence frameworks to unlock the full potential of diverse teams.", what:"DEI in Excellence recognises that diverse teams consistently outperform homogeneous ones on complex problem solving and innovation. Excellence frameworks must actively include diverse voices, remove systemic barriers, and build equitable processes.", how:"Audit excellence participation rates by demographic. Identify and remove barriers to participation in improvement activities. Facilitate psychologically safe environments where all voices are equally heard and valued.", benefits:"Unlocks diverse perspectives for richer problem solving, improves equity of opportunity, builds more innovative and resilient teams, and fulfils ethical obligations.", tags:["DEI","Inclusion","Diversity","Innovation"] },
+  { id:71, cat:"Culture", title:"Accountability Culture", origin:"Organisational Behaviour & Leadership", complexity:"Intermediate", desc:"Building a culture where individuals take ownership of their commitments, learn from failures, and deliver on excellence expectations.", what:"An Accountability Culture is one where everyone takes responsibility for their outputs, commitments, and improvement actions without blaming others. It is enabled by clear expectations, transparent performance data, and fair consequences.", how:"Define clear roles and responsibilities for excellence activities. Make improvement commitments visible (A3s, action plans) and review them regularly. Respond consistently to both achievement and non-achievement of commitments.", benefits:"Accelerates improvement execution, reduces repeated problems, builds trust across teams, and creates the seriousness of purpose that excellence demands.", tags:["Ownership","Commitment","Trust","Performance"] },
+  { id:72, cat:"Culture", title:"Wellbeing & Excellence Connection", origin:"Positive Psychology / WHO / CIPD", complexity:"Intermediate", desc:"Recognising that employee wellbeing and organisational excellence are mutually reinforcing — not competing priorities.", what:"The Wellbeing-Excellence Connection recognises that physically and mentally healthy employees deliver better quality, generate more improvement ideas, stay longer, and create better customer experiences. Excellence frameworks increasingly integrate wellbeing as a core enabler.", how:"Measure employee wellbeing alongside traditional excellence metrics. Design improvement activities that enhance rather than add to workload stress. Build wellbeing support into the excellence management system.", benefits:"Improves quality outcomes through healthier, more engaged employees, reduces absenteeism and turnover, and builds sustainable excellence performance.", tags:["Mental Health","Engagement","Sustainability","People"] },
+  { id:73, cat:"Culture", title:"Storytelling for Excellence", origin:"Organisational Communication / Narrative Leadership", complexity:"Beginner", desc:"Using compelling stories and narratives to communicate excellence values, celebrate improvement, and inspire commitment to quality.", what:"Storytelling for Excellence uses the natural human response to narrative to make improvement work meaningful, celebrate quality champions, and communicate the impact of excellence on real customers and colleagues.", how:"Collect stories of excellence impact — customer feedback transformed by quality improvement, safety incidents prevented by poka-yoke, cost savings reinvested in people. Share stories at all-hands meetings, in newsletters, and on visual management boards.", benefits:"Makes abstract excellence values concrete and memorable, inspires imitation of excellence behaviours, and creates an emotional connection to quality work.", tags:["Communication","Narrative","Inspiration","Values"] },
+  { id:74, cat:"Culture", title:"Community of Practice (CoP)", origin:"Etienne Wenger, 1998", complexity:"Intermediate", desc:"Groups of people who share a concern or passion for excellence practice and interact regularly to learn how to do it better.", what:"Communities of Practice for excellence bring together quality and improvement practitioners from across an organisation (or industry) to share knowledge, solve common problems, and develop collective expertise in excellence practice.", how:"Identify existing informal networks around excellence topics. Formalise them with light structure (regular meetings, shared repository, rotating facilitation). Connect CoPs across sites or organisations for benchmarking.", benefits:"Accelerates knowledge sharing, prevents silos of excellence expertise, builds professional identity around excellence, and sustains improvement effort beyond individual projects.", tags:["Knowledge Sharing","Network","Professional Development","Wenger"] },
+  { id:75, cat:"Culture", title:"Intrapreneurship for Excellence", origin:"Gifford Pinchot III, 1985", complexity:"Advanced", desc:"Empowering employees to act as internal entrepreneurs — identifying opportunities, taking initiative, and driving excellence innovation.", what:"Intrapreneurship for Excellence creates space for employees to pursue improvement and innovation opportunities with the autonomy and resources of an entrepreneur — but within the safety of the organisation.", how:"Create an internal innovation fund for excellence projects. Give teams protected time for improvement experimentation. Establish a fast-track approval process for intrapreneurial excellence proposals. Celebrate intelligent failures as learning.", benefits:"Unlocks latent improvement potential, attracts entrepreneurial talent, generates breakthrough excellence innovations, and builds an ownership culture.", tags:["Entrepreneurship","Innovation","Autonomy","Initiative"] },
+
+  // ─── KPIs & METRICS (25) ───
+  { id:76, cat:"KPIs", title:"Overall Equipment Effectiveness (OEE)", origin:"Seiichi Nakajima, TPM, 1988", complexity:"Intermediate", desc:"The gold standard measure of manufacturing productivity combining Availability, Performance, and Quality into a single metric.", what:"OEE measures how effectively a manufacturing operation is utilised. OEE = Availability × Performance × Quality. A world-class OEE is 85%. It identifies the six big losses: breakdowns, set-up time, small stops, reduced speed, start-up rejects, and production rejects.", how:"Collect real-time data on planned production time, actual run time, actual output, and quality output. Calculate OEE daily by line. Display on visual management boards. Run focused improvement (Kobetsu Kaizen) on the biggest loss.", benefits:"Provides a comprehensive view of manufacturing efficiency, identifies and prioritises loss elimination, and benchmarks against world-class standards.", tags:["OEE","TPM","Manufacturing","Availability"] },
+  { id:77, cat:"KPIs", title:"Net Promoter Score (NPS)", origin:"Fred Reichheld, Bain & Company, 2003", complexity:"Beginner", desc:"A customer loyalty metric based on a single question: 'How likely are you to recommend us?' Scores range from -100 to +100.", what:"NPS measures customer loyalty by asking customers to rate their likelihood to recommend on a 0–10 scale. Promoters (9–10) minus Detractors (0–6) = NPS. It is a leading indicator of growth and is highly correlated with customer retention.", how:"Deploy NPS surveys at key customer touchpoints (post-purchase, post-service). Segment results by customer group and product line. Close the loop on detractor feedback within 48 hours. Track NPS trend monthly and quarterly.", benefits:"Simple to measure and understand at all levels, correlates with growth and retention, identifies customer advocacy, and drives customer-centric improvement.", tags:["Customer Loyalty","Promoters","Detractors","CX"] },
+  { id:78, cat:"KPIs", title:"Customer Satisfaction Score (CSAT)", origin:"Customer Experience Management", complexity:"Beginner", desc:"A direct measure of customer satisfaction with a specific interaction, product, or service, typically rated on a 1–5 scale.", what:"CSAT measures how satisfied customers are with a specific transaction or touchpoint. It is typically captured immediately after an interaction using a short survey: 'How satisfied were you with today's experience?' Scores above 80% are generally considered good.", how:"Identify key customer touchpoints for CSAT measurement. Deploy short, immediate surveys (1–3 questions). Set CSAT targets by touchpoint. Analyse verbatim comments alongside scores. Act on low-scoring interactions within defined SLAs.", benefits:"Provides immediate feedback on customer experience quality, identifies specific improvement areas, and enables rapid response to service failures.", tags:["Customer Experience","Survey","Satisfaction","CX"] },
+  { id:79, cat:"KPIs", title:"First Pass Yield (FPY)", origin:"Manufacturing Quality / Six Sigma", complexity:"Intermediate", desc:"The percentage of units that complete a process and meet quality requirements without rework or rejection at the first attempt.", what:"FPY (also called First Time Quality or First Time Right) measures the proportion of product or service outputs that are correct on the first attempt, without rework or repair. It is a powerful measure of process quality.", how:"Measure defects and rework at each process step. Calculate FPY = units meeting specification first time / total units started. Track by process step to identify the biggest quality losses. Set targets and run improvement projects.", benefits:"Reveals hidden cost of poor quality, identifies the true efficiency of processes, drives targeted quality improvement, and is a leading indicator of cost and customer satisfaction.", tags:["Quality","Rework","Six Sigma","Manufacturing"] },
+  { id:80, cat:"KPIs", title:"Cost of Poor Quality (COPQ)", origin:"Joseph Juran — Quality Control Handbook, 1951", complexity:"Advanced", desc:"The total financial cost of not doing things right the first time — including failure costs, appraisal costs, and prevention costs.", what:"COPQ (also called Cost of Quality, COQ) includes: Internal Failure (scrap, rework), External Failure (warranty, returns, complaints), Appraisal (inspection, testing), and Prevention (training, quality planning). World-class organisations have COPQ of 1–3% of sales.", how:"Implement a COPQ tracking system capturing costs from quality, operations, finance, and service functions. Report COPQ as % of sales monthly. Use COPQ as a business case for improvement investments and prioritise reduction projects.", benefits:"Makes the business case for quality investment, quantifies the hidden factory, prioritises improvement effort by financial impact, and demonstrates the ROI of excellence.", tags:["COQ","Juran","Financial","Hidden Factory"] },
+  { id:81, cat:"KPIs", title:"Defects Per Million Opportunities (DPMO)", origin:"Motorola / Six Sigma", complexity:"Advanced", desc:"A measure of process quality that normalises defect counts by opportunity, enabling comparison across different processes.", what:"DPMO = (Number of Defects / (Number of Units × Number of Opportunities per Unit)) × 1,000,000. It converts any quality measurement to a sigma level. 3.4 DPMO = Six Sigma quality level (99.99966% defect-free).", how:"Define defect opportunities carefully for each process. Count defects and calculate DPMO. Convert to sigma level using sigma conversion table. Use DPMO to benchmark processes and set improvement targets.", benefits:"Enables apples-to-apples comparison of quality across different processes, translates to sigma level for communication, and sets ambitious improvement targets.", tags:["Six Sigma","Sigma Level","Process Quality","Defects"] },
+  { id:82, cat:"KPIs", title:"On-Time Delivery (OTD)", origin:"Operations Management / Supply Chain", complexity:"Beginner", desc:"The percentage of orders, products, or services delivered to customers on or before the promised date.", what:"OTD measures delivery performance against customer commitments. OTD % = (Orders delivered on time / Total orders) × 100. World-class OTD is typically 95–99%+. It is a key indicator of supply chain reliability and customer service quality.", how:"Define 'on time' clearly (customer request date vs. confirmed date). Measure OTD at order line level. Analyse root causes of late deliveries using Pareto analysis. Set improvement targets and track weekly.", benefits:"Directly impacts customer satisfaction and loyalty, reveals supply chain weaknesses, drives cross-functional improvement, and is a key competitive differentiator.", tags:["Supply Chain","Delivery","Customer Service","Operations"] },
+  { id:83, cat:"KPIs", title:"Process Cycle Efficiency (PCE)", origin:"Lean Management / Value Stream Analysis", complexity:"Intermediate", desc:"The ratio of value-added time to total lead time in a process — a measure of how lean a process is.", what:"PCE = Value-Added Time / Total Lead Time × 100%. Most processes have PCE of 5–20%. World-class lean processes achieve 25%+. It reveals the proportion of total time that is actually adding value to the customer.", how:"Map the value stream and identify value-added (VA) and non-value-added (NVA) time at each step. Calculate PCE = VA time / total lead time. Use improvement projects to eliminate NVA time and increase PCE.", benefits:"Reveals the extent of waste in a process, sets an aspirational lean target, and quantifies the improvement opportunity in lead time terms.", tags:["Lean","Value-Added","Lead Time","Waste"] },
+  { id:84, cat:"KPIs", title:"Employee Engagement Index", origin:"Gallup / Aon Hewitt / HR Research", complexity:"Intermediate", desc:"A composite measure of the degree to which employees are emotionally committed to the organisation and motivated to contribute to its excellence.", what:"Employee Engagement Index aggregates survey responses measuring engagement dimensions: pride in the organisation, willingness to advocate, intention to stay, and motivation to go above and beyond. Gallup's Q12 is a widely used validated instrument.", how:"Conduct annual engagement surveys with follow-up pulse surveys quarterly. Report engagement by team, department, and site. Hold leaders accountable for engagement scores. Create and follow improvement plans for low-scoring teams.", benefits:"Leading indicator of quality performance, absenteeism, turnover, and customer satisfaction — highly engaged organisations outperform on virtually every business metric.", tags:["Engagement","Gallup","People","Culture"] },
+  { id:85, cat:"KPIs", title:"Supplier Quality Rating", origin:"Procurement / Supply Chain Quality", complexity:"Intermediate", desc:"A composite score measuring supplier performance across quality, delivery, responsiveness, and compliance dimensions.", what:"Supplier Quality Rating (SQR or Supplier Scorecard) provides a holistic view of supplier performance. Typical components include: incoming quality rate, on-time delivery, corrective action response time, and audit score.", how:"Define scorecard metrics and weightings with suppliers. Measure and report scores monthly. Use scorecard ratings to drive quarterly business reviews. Segment suppliers by rating tier and apply differentiated management strategies.", benefits:"Drives supplier improvement, enables informed sourcing decisions, protects incoming quality, and builds collaborative supplier partnerships.", tags:["Supplier Management","Procurement","Incoming Quality","Scorecard"] },
+  { id:86, cat:"KPIs", title:"Mean Time Between Failures (MTBF)", origin:"Reliability Engineering / MIL-HDBK-217", complexity:"Intermediate", desc:"The average time a system or component operates before failing — a key measure of reliability and maintenance effectiveness.", what:"MTBF = Total Operating Time / Number of Failures. It is the fundamental measure of reliability for repairable systems. Higher MTBF means greater reliability. It is used to calculate failure rates, plan maintenance, and set reliability improvement targets.", how:"Implement equipment failure tracking (CMMS). Calculate MTBF by equipment type monthly. Use MTBF trend to measure the effectiveness of TPM and reliability improvement programmes. Set MTBF targets aligned to OEE goals.", benefits:"Quantifies reliability performance, drives preventive maintenance strategies, enables lifecycle cost analysis, and provides the basis for TPM improvement targets.", tags:["Reliability","TPM","Maintenance","MTBF"] },
+  { id:87, cat:"KPIs", title:"Warranty Return Rate", origin:"After-Sales Quality / Customer Quality", complexity:"Intermediate", desc:"The percentage of products returned under warranty as a measure of field quality and the effectiveness of quality controls.", what:"Warranty Return Rate = (Warranty returns in period / Units sold in period) × 100%. It is a lagging indicator of product quality that reflects the cumulative effectiveness of design, manufacturing, and supplier quality controls.", how:"Track warranty returns by product, failure mode, and manufacturing date. Analyse warranty data for systemic failure patterns. Use warranty data to drive FMEA updates and quality improvement projects.", benefits:"Directly measures customer-experienced quality, provides real-world feedback on process quality effectiveness, and quantifies the financial impact of field failures.", tags:["After-Sales","Field Quality","Customer","Returns"] },
+  { id:88, cat:"KPIs", title:"Lead Time Reduction Index", origin:"Lean / Value Stream Management", complexity:"Intermediate", desc:"A measure of the reduction in total lead time achieved through lean and excellence improvement activities.", what:"Lead Time Reduction Index tracks the percentage improvement in total lead time from a baseline. Lead time includes all time from order receipt to customer delivery, including process time, queue time, and transport time.", how:"Establish baseline lead time through value stream mapping. Set reduction targets (typically 30–50% initial improvement is achievable). Track lead time weekly as a key performance indicator of lean implementation progress.", benefits:"Directly improves customer responsiveness, reduces working capital tied up in WIP, and demonstrates the business value of lean and excellence investment.", tags:["Lean","Lead Time","Flow","Customer Response"] },
+  { id:89, cat:"KPIs", title:"Innovation Pipeline Metrics", origin:"Innovation Management / Stage-Gate", complexity:"Advanced", desc:"A set of metrics tracking the health, diversity, and output of the organisation's innovation pipeline.", what:"Innovation Pipeline Metrics include: number of ideas generated, ideas converted to projects, projects reaching launch, revenue from new products, and innovation investment as % of sales. They provide a balanced view of innovation input, process, and output.", how:"Establish an innovation governance process with stage-gate reviews. Instrument each stage with metrics. Report pipeline health monthly to senior leadership. Use metrics to diagnose pipeline bottlenecks and strengthen weak stages.", benefits:"Makes innovation management visible and measurable, enables data-driven portfolio decisions, and demonstrates the return on innovation investment.", tags:["Innovation","Pipeline","Stage-Gate","NPD"] },
+  { id:90, cat:"KPIs", title:"Excellence Maturity Score", origin:"EFQM / Baldrige / Self-Assessment Models", complexity:"Advanced", desc:"A composite score from structured self-assessment reflecting an organisation's maturity across enablers and results.", what:"Excellence Maturity Score is derived from structured self-assessment against an excellence framework (EFQM, Baldrige, national award criteria). It provides an overall excellence score and scores by category, enabling year-on-year tracking of maturity progression.", how:"Conduct annual self-assessment using validated scoring tools. Engage a cross-functional team in the assessment process. Compare scores year-on-year. Benchmark against award applicants and recognised organisations.", benefits:"Provides an objective, holistic view of organisational excellence maturity, sets improvement priorities, enables external benchmarking, and tracks the ROI of excellence investment.", tags:["Self-Assessment","Maturity","EFQM","Benchmarking"] },
+  { id:91, cat:"KPIs", title:"Lost Time Injury Rate (LTIR)", origin:"Occupational Health & Safety / OSHA", complexity:"Beginner", desc:"The number of work-related injuries resulting in lost time per million (or 200,000) hours worked.", what:"LTIR = (Number of lost time injuries × 1,000,000) / Total hours worked. It is the primary safety performance metric used across industries. A downward trend in LTIR demonstrates improving safety culture and management effectiveness.", how:"Record all lost time injuries rigorously. Calculate LTIR monthly. Investigate every LTI with a formal RCA. Benchmark LTIR against industry rates. Target zero LTI as the strategic safety goal.", benefits:"Monitors safety performance, drives injury prevention investment, fulfils legal reporting obligations, and demonstrates leadership's commitment to employee wellbeing.", tags:["Safety","OH&S","Injury Prevention","OSHA"] },
+  { id:92, cat:"KPIs", title:"Customer Effort Score (CES)", origin:"Gartner / CEB — The Effortless Experience, 2010", complexity:"Intermediate", desc:"A measure of how much effort a customer must exert to get their issue resolved or their need met.", what:"CES asks customers: 'How easy was it to handle your request?' on a 1–7 scale. Research shows that reducing customer effort is more predictive of loyalty than delighting customers. Low effort experiences drive retention.", how:"Deploy CES surveys after service interactions and key customer journeys. Analyse high-effort interactions for root causes. Prioritise process improvements that reduce customer effort. Compare CES by channel and interaction type.", benefits:"More predictive of loyalty than CSAT alone, identifies friction points in customer journeys, and guides process redesign for effortless customer experience.", tags:["Customer Experience","Loyalty","CX","Service Design"] },
+  { id:93, cat:"KPIs", title:"Process Sigma Level", origin:"Motorola / Six Sigma — 1980s", complexity:"Advanced", desc:"A measure of process quality expressed as a sigma level corresponding to a specific DPMO and defect rate.", what:"Sigma Level converts DPMO to a z-score representing how many standard deviations the process mean is from the nearest specification limit. 6 Sigma = 3.4 DPMO. Most business processes operate at 3–4 sigma.", how:"Calculate DPMO for the process. Convert to sigma level using sigma conversion table or formula. Report sigma levels for critical processes. Set targets (e.g., reach 5 sigma by year end) and track improvement.", benefits:"Provides an intuitive language for process quality, enables consistent target-setting across different processes, and communicates quality in terms senior leaders understand.", tags:["Six Sigma","DPMO","Capability","Quality Level"] },
+  { id:94, cat:"KPIs", title:"Kaizen Events per Employee per Year", origin:"Lean Management / Kaizen Institute", complexity:"Beginner", desc:"A measure of the improvement activity rate — how many kaizen events or improvement activities each employee participates in annually.", what:"Tracking kaizen events or improvement activities per employee per year measures the breadth of improvement engagement across the organisation. World-class organisations target 10–50 improvements per employee per year.", how:"Create a lightweight improvement idea tracking system. Report participation rates by team and department monthly. Celebrate milestones (e.g., 1000th improvement). Include participation rate in team leader performance discussions.", benefits:"Drives broad engagement in improvement, surfaces the large number of small improvements that collectively create major impact, and builds improvement as a daily habit.", tags:["Kaizen","Engagement","Improvement Rate","Lean Culture"] },
+  { id:95, cat:"KPIs", title:"Throughput Yield (Rolled Throughput Yield)", origin:"Six Sigma — Mikel Harry", complexity:"Advanced", desc:"The probability that a unit will pass through all process steps defect-free, capturing the cumulative quality effect of all process steps.", what:"Rolled Throughput Yield (RTY) = Product of First Pass Yields at each step. If Step 1 FPY = 95%, Step 2 = 92%, Step 3 = 98%, RTY = 0.95 × 0.92 × 0.98 = 85.6%. RTY reveals the true quality level of complex multi-step processes.", how:"Measure FPY at every process step. Calculate RTY as the product. Use RTY to compare the true quality of different process routes. Improve the lowest FPY steps first to achieve the greatest RTY improvement.", benefits:"Exposes hidden rework and poor quality that simple final inspection misses, identifies the biggest contributors to poor process quality, and drives targeted improvement.", tags:["Six Sigma","FPY","Process Quality","Yield"] },
+  { id:96, cat:"KPIs", title:"Strategic Goal Achievement Rate", origin:"Balanced Scorecard / Hoshin Kanri", complexity:"Intermediate", desc:"The percentage of strategic objectives and annual hoshin goals achieved on time, measuring strategy execution effectiveness.", what:"Strategic Goal Achievement Rate tracks how effectively the organisation translates strategic plans into results. Measuring the % of strategic objectives achieved on time and on target provides a meta-metric for execution quality.", how:"Define clear, measurable strategic objectives with owners, targets, and deadlines. Review achievement monthly in strategy review meetings. Track trend over time. Investigate root causes of missed goals systematically.", benefits:"Makes strategy execution visible and accountable, drives improvement in planning quality, and measures the organisation's capability to deliver on its commitments.", tags:["Strategy","Execution","Hoshin","Accountability"] },
+  { id:97, cat:"KPIs", title:"Audit Score & Compliance Rate", origin:"ISO / Quality Assurance / Internal Audit", complexity:"Beginner", desc:"Metrics measuring the effectiveness of internal and external audit programmes and organisational compliance with standards.", what:"Audit Score measures conformance to requirements in internal or third-party audits. Compliance Rate tracks the timely closure of audit findings. Together they measure the health of the quality management system and regulatory compliance.", how:"Conduct internal audits on a risk-based schedule. Score each audit clause and track trends over time. Measure % corrective actions closed on time. Report audit performance in management review.", benefits:"Provides evidence of QMS effectiveness, maintains certification compliance, identifies systemic weaknesses before external audits, and drives continuous improvement of the management system.", tags:["ISO","Internal Audit","Compliance","CAPA"] },
+  { id:98, cat:"KPIs", title:"Return on Excellence Investment (ROEI)", origin:"Business Excellence / Financial Analysis", complexity:"Advanced", desc:"A financial metric quantifying the return generated from excellence, quality, and continuous improvement investments.", what:"ROEI measures the financial value generated by excellence investments (training, improvement projects, certification, excellence programmes) relative to their cost. It makes the business case for continued excellence investment and demonstrates excellence's strategic value.", how:"Track costs of excellence investments (training, consultancy, projects, certification). Quantify benefits (COPQ reduction, productivity gains, revenue from new customers won due to quality reputation). Calculate ROEI = Benefits / Costs × 100.", benefits:"Justifies ongoing excellence investment to senior leadership, prioritises improvement projects by financial return, and positions excellence as a strategic business driver rather than a cost centre.", tags:["ROI","Financial","Business Case","Excellence Value"] },
+  { id:99, cat:"KPIs", title:"Time to Market (TTM)", origin:"Product Development / Innovation Management", complexity:"Intermediate", desc:"The time elapsed from a product concept being approved to the product being available for sale — a key measure of innovation speed.", what:"TTM measures the speed of the organisation's product or service development process from idea approval to market launch. Shorter TTM enables faster response to customer needs and competitive opportunities.", how:"Track TTM for every development project. Analyse by project type and product category. Identify the biggest time-consuming phases using process mapping. Apply APQP, agile, and lean development to reduce TTM systematically.", benefits:"Improves competitive positioning, reduces the risk of market obsolescence, improves return on development investment, and builds innovation agility.", tags:["Innovation","NPD","Speed","Competitive"] },
+  { id:100, cat:"KPIs", title:"Excellence Dashboard Composite Score", origin:"EFQM / Balanced Scorecard / Integrated Reporting", complexity:"Advanced", desc:"A single integrated score that combines leading and lagging indicators across all excellence dimensions into a holistic performance view.", what:"The Excellence Dashboard Composite Score aggregates key metrics from all four excellence dimensions (Models, Tools, Culture, KPIs) into a single executive score. It provides a holistic view of excellence health and enables trend monitoring over time.", how:"Select 4–6 key metrics from each excellence dimension. Normalise each metric to a 0–10 scale. Apply weightings based on strategic priorities. Calculate the composite score monthly. Review in leadership excellence forum.", benefits:"Provides a concise, board-level view of excellence performance, enables holistic trend analysis, drives integrated improvement conversations, and demonstrates the multi-dimensional nature of true excellence.", tags:["Dashboard","Integrated","Executive","Holistic"] },
+];
+
+let currentCat = 'all';
+let currentIdx = -1;
+
+function buildCards() {
+  const grid = document.getElementById('grid');
+  grid.innerHTML = '';
+  topics.forEach((t, i) => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.setAttribute('data-cat', t.cat);
+    card.setAttribute('data-id', t.id);
+    card.style.animationDelay = (i % 20) * 0.03 + 's';
+    card.innerHTML = `
+      <div class="card-header">
+        <span class="card-num">#${String(t.id).padStart(2,'0')}</span>
+        <span class="cat-badge">${t.cat}</span>
+      </div>
+      <div class="card-title">${t.title}</div>
+      <div class="card-origin">${t.origin}</div>
+      <div class="card-desc">${t.desc}</div>
+      <div class="card-footer">
+        <span class="complexity-tag">${t.complexity}</span>
+        <span class="learn-more">Explore →</span>
+      </div>`;
+    card.addEventListener('click', () => openModal(i));
+    grid.appendChild(card);
+  });
+  updateCount();
+}
+
+function filterCat(cat, btn) {
+  currentCat = cat;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  filterCards();
+}
+
+function filterCards() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  let visible = 0;
+  document.querySelectorAll('.card').forEach(card => {
+    const id = parseInt(card.getAttribute('data-id')) - 1;
+    const t = topics[id];
+    const matchCat = currentCat === 'all' || t.cat === currentCat;
+    const matchQ = !q || t.title.toLowerCase().includes(q) || t.desc.toLowerCase().includes(q) || t.tags.some(tag => tag.toLowerCase().includes(q)) || t.origin.toLowerCase().includes(q);
+    card.classList.toggle('hidden', !(matchCat && matchQ));
+    if (matchCat && matchQ) visible++;
+  });
+  document.getElementById('resultsCount').textContent = visible + ' topic' + (visible !== 1 ? 's' : '');
+}
+
+function updateCount() {
+  document.getElementById('resultsCount').textContent = topics.length + ' topics';
+}
+
+function spotlightRandom() {
+  document.querySelectorAll('.card').forEach(c => c.classList.remove('spotlight'));
+  const visible = Array.from(document.querySelectorAll('.card:not(.hidden)'));
+  if (!visible.length) return;
+  const card = visible[Math.floor(Math.random() * visible.length)];
+  card.classList.add('spotlight');
+  card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  setTimeout(() => card.classList.remove('spotlight'), 3000);
+  const id = parseInt(card.getAttribute('data-id')) - 1;
+  openModal(id);
+}
+
+/* ── WHEEL ── */
+const wheelCats = [
+  { label: 'Models',  color: '#c9a84c', light: '#fdf7e8' },
+  { label: 'Tools',   color: '#2d6a8a', light: '#e8f4fa' },
+  { label: 'Culture', color: '#5a7a3a', light: '#eef5e8' },
+  { label: 'KPIs',    color: '#8a3a5a', light: '#fae8f0' },
+];
+
+const wheelSegments = [];
+topics.forEach(t => {
+  wheelSegments.push({ title: t.title, cat: t.cat, idx: t.id - 1 });
+});
+
+let wheelSpinning = false;
+let wheelAngle = 0;
+let wheelPicked = null;
+
+function openWheel() {
+  document.getElementById('wheelOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('wheelResult').innerHTML = '';
+  document.getElementById('wheelSpinBtn').disabled = false;
+  drawWheel(wheelAngle);
+}
+
+function closeWheel() {
+  document.getElementById('wheelOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeWheelOutside(e) {
+  if (e.target === document.getElementById('wheelOverlay')) closeWheel();
+}
+
+function drawWheel(rotation) {
+  const canvas = document.getElementById('wheelCanvas');
+  const ctx = canvas.getContext('2d');
+  const cx = canvas.width / 2, cy = canvas.height / 2, r = cx - 6;
+  const total = wheelSegments.length;
+  const arc = (2 * Math.PI) / total;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Draw segments
+  wheelSegments.forEach((seg, i) => {
+    const catInfo = wheelCats.find(c => c.label === seg.cat) || wheelCats[0];
+    const startAngle = rotation + i * arc;
+    const endAngle = startAngle + arc;
+
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
+    ctx.arc(cx, cy, r, startAngle, endAngle);
+    ctx.closePath();
+    ctx.fillStyle = i % 2 === 0 ? catInfo.color : catInfo.light;
+    ctx.fill();
+    ctx.strokeStyle = '#fff';
+    ctx.lineWidth = 0.8;
+    ctx.stroke();
+  });
+
+  // Category colour bands (outer ring)
+  wheelSegments.forEach((seg, i) => {
+    const catInfo = wheelCats.find(c => c.label === seg.cat) || wheelCats[0];
+    const startAngle = rotation + i * arc;
+    const endAngle = startAngle + arc;
+    ctx.beginPath();
+    ctx.arc(cx, cy, r, startAngle, endAngle);
+    ctx.arc(cx, cy, r - 18, endAngle, startAngle, true);
+    ctx.closePath();
+    ctx.fillStyle = catInfo.color;
+    ctx.globalAlpha = 0.85;
+    ctx.fill();
+    ctx.globalAlpha = 1;
+  });
+
+  // Label text (first word of title on outer ring)
+  ctx.save();
+  wheelSegments.forEach((seg, i) => {
+    const midAngle = rotation + i * arc + arc / 2;
+    const textR = r - 9;
+    ctx.save();
+    ctx.translate(cx + textR * Math.cos(midAngle), cy + textR * Math.sin(midAngle));
+    ctx.rotate(midAngle + Math.PI / 2);
+    ctx.font = '500 7px DM Sans, sans-serif';
+    ctx.fillStyle = '#fff';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    const word = seg.title.split(' ')[0].substring(0, 8);
+    ctx.fillText(word, 0, 0);
+    ctx.restore();
+  });
+  ctx.restore();
+
+  // Centre hub
+  const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, 36);
+  grad.addColorStop(0, '#ffffff');
+  grad.addColorStop(1, '#f5e9c8');
+  ctx.beginPath();
+  ctx.arc(cx, cy, 36, 0, 2 * Math.PI);
+  ctx.fillStyle = grad;
+  ctx.fill();
+  ctx.strokeStyle = '#c9a84c';
+  ctx.lineWidth = 2.5;
+  ctx.stroke();
+
+  // Hub icon
+  ctx.font = 'bold 18px serif';
+  ctx.fillStyle = '#a07830';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('✦', cx, cy);
+}
+
+function spinWheel() {
+  if (wheelSpinning) return;
+  wheelSpinning = true;
+  document.getElementById('wheelSpinBtn').disabled = true;
+  document.getElementById('wheelResult').innerHTML = '';
+
+  const total = wheelSegments.length;
+  const arc = (2 * Math.PI) / total;
+
+  // Pick a random winner
+  const winnerIdx = Math.floor(Math.random() * total);
+  wheelPicked = winnerIdx;
+
+  // Calculate rotation so winner lands at top (pointer at -π/2)
+  const extraSpins = (6 + Math.random() * 4) * 2 * Math.PI; // 6-10 full spins
+  const targetAngle = -Math.PI / 2 - (winnerIdx * arc + arc / 2);
+  const totalRotation = extraSpins + ((targetAngle - wheelAngle) % (2 * Math.PI));
+
+  const duration = 4000 + Math.random() * 1500;
+  const startAngle = wheelAngle;
+  const endAngle = startAngle + totalRotation;
+  const startTime = performance.now();
+
+  function easeOut(t) {
+    return 1 - Math.pow(1 - t, 4);
+  }
+
+  function animate(now) {
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const easedProgress = easeOut(progress);
+    wheelAngle = startAngle + (endAngle - startAngle) * easedProgress;
+    drawWheel(wheelAngle);
+
+    if (progress < 1) {
+      requestAnimationFrame(animate);
+    } else {
+      wheelAngle = endAngle % (2 * Math.PI);
+      wheelSpinning = false;
+      showWheelResult(winnerIdx);
+    }
+  }
+
+  requestAnimationFrame(animate);
+}
+
+function showWheelResult(segIdx) {
+  const seg = wheelSegments[segIdx];
+  const catInfo = wheelCats.find(c => c.label === seg.cat) || wheelCats[0];
+  const btn = document.getElementById('wheelSpinBtn');
+  btn.disabled = false;
+  btn.textContent = '🎰 SPIN AGAIN';
+
+  document.getElementById('wheelResult').innerHTML = `
+    <div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:0.3rem">🎯 You landed on</div>
+    <div class="wheel-result-title">${seg.title}</div>
+    <span class="wheel-result-cat" style="background:${catInfo.light};color:${catInfo.color};border:1px solid ${catInfo.color}40">${seg.cat}</span>
+    <button class="wheel-explore-btn" onclick="exploreWheelPick(${seg.idx})">Explore This Topic →</button>
+  `;
+}
+
+function exploreWheelPick(idx) {
+  closeWheel();
+  setTimeout(() => {
+    openModal(idx);
+    document.querySelectorAll('.card').forEach(c => {
+      c.classList.remove('spotlight');
+      if (parseInt(c.getAttribute('data-id')) - 1 === idx) {
+        c.classList.add('spotlight');
+        c.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(() => c.classList.remove('spotlight'), 3000);
+      }
+    });
+  }, 300);
+}
+
+
+function openModal(idx) {
+  currentIdx = idx;
+  const t = topics[idx];
+  document.getElementById('modalBar').className = 'modal-top-bar ' + t.cat;
+  document.getElementById('modal').querySelector('.modal-body').innerHTML = `
+    <div class="modal-meta">
+      <span class="cat-badge" style="${catStyle(t.cat)}">${t.cat}</span>
+      <span style="font-size:.68rem;font-family:'DM Mono',monospace;color:var(--text-muted)">◈ ${t.complexity}</span>
+      <span style="font-size:.68rem;font-family:'DM Mono',monospace;color:var(--text-muted)">#${String(t.id).padStart(2,'0')} of 100</span>
+    </div>
+    <div class="modal-title">${t.title}</div>
+    <div class="modal-origin">${t.origin}</div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">What Is It?</div>
+      <div class="def-callout"><p>${t.what}</p></div>
+    </div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">How to Apply It</div>
+      <ul class="apply-list">${t.how.split('. ').filter(s=>s.trim().length>5).map(s=>`<li>${s.trim().replace(/\.$/,'')}</li>`).join('')}</ul>
+    </div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">Key Benefits</div>
+      <ul class="benefit-list">${t.benefits.split('. ').filter(s=>s.trim().length>5).map(s=>`<li>${s.trim().replace(/\.$/,'')}</li>`).join('')}</ul>
+    </div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">Related Topics</div>
+      <div class="modal-tags">${t.tags.map(tag=>`<span class="modal-tag">${tag}</span>`).join('')}</div>
+    </div>
+
+    <div class="modal-nav">
+      <button class="modal-nav-btn" onclick="navigateModal(-1)">← Previous</button>
+      <button class="modal-nav-btn primary" onclick="closeModalBtn()">Close</button>
+      <button class="modal-nav-btn" onclick="navigateModal(1)">Next →</button>
+    </div>`;
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('modal').scrollTop = 0;
+}
+
+function catStyle(cat) {
+  const s = {
+    Models: `background:var(--cat1-bg);color:var(--cat1);border:1px solid rgba(146,64,14,.25)`,
+    Tools:  `background:var(--cat2-bg);color:var(--cat2);border:1px solid rgba(12,74,110,.25)`,
+    Culture:`background:var(--cat3-bg);color:var(--cat3);border:1px solid rgba(20,83,45,.25)`,
+    KPIs:   `background:var(--cat4-bg);color:var(--cat4);border:1px solid rgba(136,19,55,.25)`
+  };
+  return s[cat] || '';
+}
+
+function closeModal(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModalBtn();
+}
+
+function closeModalBtn() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function navigateModal(dir) {
+  let newIdx = currentIdx + dir;
+  if (newIdx < 0) newIdx = topics.length - 1;
+  if (newIdx >= topics.length) newIdx = 0;
+  openModal(newIdx);
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModalBtn();
+  if (e.key === 'ArrowRight') navigateModal(1);
+  if (e.key === 'ArrowLeft') navigateModal(-1);
+});
+
+buildCards();
+</script>
+</body>
+</html>
